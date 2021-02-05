@@ -564,7 +564,7 @@ clear
 
 tput cuu1 && tput dl1
 msg -bar2
-echo -e "\033[1;37m       =====>>►► 🐲 PANEL VPS•MX 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\033[1;37m       =====>>►► • PANEL ADMIN VPS • ◄◄<<=====       \033[1;37m"
 msg -bar
 msg -ama "                 MENU DE HERRAMIENTAS"
 msg -bar2
