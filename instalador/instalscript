@@ -302,7 +302,7 @@ for arqx in ${casita[@]}; do
 done
 sleep 1s
 msg -bar
-Key="VpsMx/LaCasita/Kalix/v8.1/1K45*456*Fr33"
+Key="VpsPremium.com.mxK?%ab97cda8f?K81mx@+95+94@"
    cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
    echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
    mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
