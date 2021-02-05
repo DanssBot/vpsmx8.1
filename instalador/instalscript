@@ -31,7 +31,13 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 #IP=$(wget -qO- ipv4.icanhazip.com)
 
 function_verify () {
-
+permited=$(curl -sSL "https://raw.githubusercontent.com/diesel09/Generador_Gen_VPS-MX/master/Control-IP")
+  [[ $(echo $permited|grep "${IP}") = "" ]] && {
+  echo -e "\n\n\n\033[1;95m======================================================\n ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR!,CONATACTE A @Rufu99\n======================================================\n"
+  [[ -d /etc/newadm ]] && rm -rf /etc/newadm
+  exit 1
+  } || {
+ 
   ### INTALAR VERCION DE SCRIPT
   v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/scripts/master/vercion")
   echo "$v1" > /etc/versin_script
