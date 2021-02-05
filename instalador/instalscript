@@ -170,7 +170,7 @@ msg -bar2
 }
 funcao_idioma () {
 msg -bar2
-figlet "    -ADMIN VPS -" | lolcat
+figlet "    ADMIN VPS" | lolcat
 echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
 msg -bar2
 pv="$(echo es)"
