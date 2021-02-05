@@ -640,8 +640,8 @@ selection=$(selection_fun $Numb)
   ${SCPfrm}/${script[$selection]} 
   } || {
   case ${script[$selection]} in
-  #"agregar")agregar_ferramenta;;
-  #"remove")remove_ferramenta;;
+  "agregar")agregar_ferramenta;;
+  "remove")remove_ferramenta;;
   "limpar")limpar_caches;;
   "systeminf")systen_info;;
   *)return 0;;
