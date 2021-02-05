@@ -627,6 +627,11 @@ script[$Numb]="ultrahost"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PRUEBA DE VELOCIDAD                $ofc"
 script[$Numb]="speed.sh"
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") $(msg -ama "[!]") " && msg -verd "AGREGAR HERRAMIENTAS"
+script[$Numb]="agregar"
+let Numb++
+echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") $(msg -ama "[!]") " && msg -verm2 "REMOVER HERRAMIENTAS"
+script[$Numb]="remove"
 echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") " && msg -bra "$(fun_trans "VOLVER")"
 script[0]="voltar"
 msg -bar2
