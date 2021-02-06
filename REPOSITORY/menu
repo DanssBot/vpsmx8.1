@@ -917,7 +917,7 @@ echo -e "\033[1;97m   LIMITADOR:\033[1;92m $verificar \033[1;97m DESBLOQUEADOR A
 [[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra " KEY: \033[1;93m$(cat ${SCPdir}/key.txt)"
 # NOVO SISTEMA DE MENUS
 msg -bra " VERSION INSTALADA: \033[1;31m[\033[1;32m $vesaoSCT\033[1;97m"
-msg -bra " CONTACTO: \033[1;31m[\033[1;32m +52 9841058512 \033[1;31m][1;97m" 
+msg -bra " CONTACTO: \033[1;31m[\033[1;32m +52 9841058512 \033[1;31m] " 
 msg -bar
 menu_func "ADMINISTRAR CUENTAS (SSH/SSL/DROPBEAR)" "ADMINISTRAR CUENTAS (SS/SSRR)" "\033[1;100mMENU DE INSTALACIONES" "PUERTOS ACTIVOS" "HERRAMIENTAS y EXTRAS" "CAMBIAR COLORES DEL PANEL" " -fi ${monitorservi} MONITOR DE SERVICIOS" "-fi $AutoRun AUTO INICIAR" " -vd ACTUALIZAR PANEL" "-vm DESINSTALAR PANEL" 
 msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mSALIR DEL SCRIPT"
