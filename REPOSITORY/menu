@@ -627,6 +627,7 @@ script[$Numb]="ultrahost"
 let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") " && msg -azu "PRUEBA DE VELOCIDAD                $ofc"
 script[$Numb]="speed.sh"
+let Numb++
 echo -ne "$(msg -verd "[$Numb]") $(msg -verm2 ">") $(msg -ama "[!]") " && msg -verd "AGREGAR HERRAMIENTAS $ofc"
 script[$Numb]="agregar"
 let Numb++
