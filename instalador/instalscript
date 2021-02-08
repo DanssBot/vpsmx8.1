@@ -213,7 +213,6 @@ echo 'echo "" '>> .bashrc
 echo 'echo -e "\033[92m        Visitanos en www.vpspremium.com.mx "'>> .bashrc
 
 echo 'mess1="$(less /etc/newadm/message.txt)" ' >> .bashrc
-echo 'mess1="$(less /etc/newadm/message2.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'ver="$(cat /etc/versin_script_new)" '>> .bashrc
 echo 'echo -e "\033[92m        RESELLER : $mess1 "'>> .bashrc
@@ -223,7 +222,7 @@ echo 'echo -e "\033[92m        VERSION : $ver "'>> .bashrc
 echo 'echo "" '>> .bashrc                                           
 echo 'echo -e "\033[97m   PARA MOSTAR EL MENU ESCRIBA:  sudo menu "'>> .bashrc
 echo 'echo ""'>> .bashrc
-echo 'echo -e "Nombre del Servidor : $HOSTNAME"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"' >> .bashrc
 echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"' >> .bashrc
 echo 'echo -e "	\e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
