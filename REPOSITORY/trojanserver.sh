@@ -27,7 +27,6 @@ clear
 echo -e "\033[1;37mΔ Generando Configuracion"
 sed -i '13i        "cert":"/etc/VpsPackdir/trojancert/trojan.crt",' /usr/local/etc/trojan/config.json
 sed -i '14i        "key":"/etc/VpsPackdir/trojancert/trojan.key",' /usr/local/etc/trojan/config.json
-figlet -p -f smslant < /root/name
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m ───────────────────────────────────────\033[1;33m"
 echo -e "\033[1;33mΔ Escriba el puerto de Trojan Server"
 read -p ": " trojanport
