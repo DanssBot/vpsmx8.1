@@ -3,7 +3,7 @@
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
-trojanserver(){
+trojanserver () {
 echo -e "\033[1;33m Se instalará el servidor de Trojan\033[0m"
 echo -e "\033[1;33m Si ya tenías una instalacion Previa, esta se eliminara\033[0m"
 echo -e "\033[1;33m Debes tener instalado previamente GO Lang\033[0m"
@@ -61,3 +61,5 @@ tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
 1)trojanserver;;
+esac
+msg -bar
