@@ -18,15 +18,15 @@ killall trojan
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 clear
 echo -e "Δ Generando Certificados SSL"
-mkdir /etc/VpsPackdir/trojancert 1> /dev/null 2> /dev/null
+mkdir /etc/ger-inst/trojancert 1> /dev/null 2> /dev/null
 curl -o /usr/local/etc/trojan/config.json https://raw.githubusercontent.com/powermx/dl/master/config.json 1> /dev/null 2> /dev/null
-openssl genrsa 2048 > /etc/VpsPackdir/trojancert/trojan.key
-chmod 400 /etc/VpsPackdir/trojancert/trojan.key
+openssl genrsa 2048 > /etc/ger-inst/trojancert/trojan.key
+chmod 400 /etc/ger-inst/trojancert/trojan.key
 openssl req -new -x509 -nodes -sha256 -days 365 -key /etc/VpsPackdir/trojancert/trojan.key -out /etc/VpsPackdir/trojancert/trojan.crt
 clear
 echo -e "\033[1;37mΔ Generando Configuracion"
-sed -i '13i        "cert":"/etc/VpsPackdir/trojancert/trojan.crt",' /usr/local/etc/trojan/config.json
-sed -i '14i        "key":"/etc/VpsPackdir/trojancert/trojan.key",' /usr/local/etc/trojan/config.json
+sed -i '13i        "cert":"/etc/ger-inst/trojancert/trojan.crt",' /usr/local/etc/trojan/config.json
+sed -i '14i        "key":"/etc/ger-inst/trojancert/trojan.key",' /usr/local/etc/trojan/config.json
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m ───────────────────────────────────────\033[1;33m"
 echo -e "\033[1;33mΔ Escriba el puerto de Trojan Server"
 read -p ": " trojanport
