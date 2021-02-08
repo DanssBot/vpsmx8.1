@@ -37,7 +37,6 @@ sed -i 's/vpspack/'$trojanpass'/g' /usr/local/etc/trojan/config.json
 echo -e "\033[1;32mΔ Iniciando Trojan Server"
 screen -dmS trojanserv trojan /usr/local/etc/trojan/config.json
 clear
-figlet -p -f smslant < /root/name
 echo -e "[\033[1;31m-\033[1;33m]\033[1;31m ───────────────────────────────────────\033[1;33m"
 echo -e "\033[1;33mTrojan Server Instalado"
 echo -e "\033[1;33mEl puerto del servidor es: \033[1;32m $trojanport"
