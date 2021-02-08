@@ -242,6 +242,9 @@ V2R+="$Port ";;
 badvpn-ud)
 [[ -z $BAD ]] && local BAD="\033[1;31m BADVPN: \033[1;32m"
 BAD+="$Port ";;
+trojanserver)
+[[ -z $TRO ]] && local TRO="\033[1;31m TROJAN SERVER: \033[1;32m"
+TRO+="$Port ";;
 esac
 done <<< "${portasVAR}"
 #UDP
@@ -270,6 +273,7 @@ done <<< "${portasVAR}"
 [[ ! -z $APC ]] && echo -e $APC
 [[ ! -z $OVPN ]] && echo -e $OVPN
 [[ ! -z $BAD ]] && echo -e $BAD
+[[ ! -z $TRO ]] && echo -e $TRO
 msg -bar2
 
 }
@@ -554,6 +558,8 @@ case $1 in
 "sockspy.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "SOCKS PYTHON $(pid_inst python)";;
 "v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "V2RAY $(pid_inst v2ray)";; 
 "budp.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "BADVPN-(UDP:7300) $(pid_inst badvpn)";;
+"trojanserver.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "TROJAN SERVER $(pid_inst trojanserver)";;
+
 
 "paysnd.sh")return 1;;
 "ultrahost")return 1;;
