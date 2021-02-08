@@ -93,6 +93,6 @@ tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
 1)trojanserver;;
-2)function goinst;;
+2)goinst;;
 esac
 msg -bar
