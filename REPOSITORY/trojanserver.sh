@@ -50,3 +50,14 @@ read -p " "
 menu
 fi
 }
+
+msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
+msg -bar
+echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR TROJAN SERVER") "
+msg -bar
+while [[ ${arquivoonlineadm} != @(0|[1-5]) ]]; do
+read -p "[0-5]: " arquivoonlineadm
+tput cuu1 && tput dl1
+done
+case $arquivoonlineadm in
+1)trojanserver;;
