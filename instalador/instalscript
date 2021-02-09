@@ -59,7 +59,7 @@ ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 inst_components () {
 echo -e "\033[97m"
 echo -e "\033[41m -- INSTALACION DE PAQUETES NECESARIOS -- "
-echo -e "\033[100m  PONER ATENCION A INSTALACION PARA SIGUIENTE PREGUNTA"
+echo -e "\033[100m  PRESTE ATENCION A LA SIGUIENTE PREGUNTA"
 echo -e "\033[97m"
 msg -bar
 #grep
