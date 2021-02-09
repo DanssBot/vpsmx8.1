@@ -10,7 +10,6 @@ SCPfrm="/etc/ger-frm"
 SCPinst="/etc/ger-inst"
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
-#SCRIPT INTERNO BY KALIX1
 #TESTIANDO SCRIPTS
 msg () {
 BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
@@ -46,7 +45,7 @@ fun_ip
 
 clear
 msg -bar
-msg -verm " ESPERE UN MOMENTO INICIANDO..."
+msg -verm " ESPERE UN MOMENTO, INICIANDO..."
 msg -bar
 dpkg --configure -a &>/dev/null
 apt-get install software-properties-common -y &>/dev/null
