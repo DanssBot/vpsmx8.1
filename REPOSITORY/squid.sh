@@ -248,6 +248,7 @@ echo -ne " \033[1;31m [ ! ] \033[1;33m$(fun_trans  "REINICIANDO SERVICIOS")"
 squid3 -k reconfigure > /dev/null 2>&1
 service ssh restart > /dev/null 2>&1
 service squid3 restart > /dev/null 2>&1
+service squid restart > /dev/null 2>&1
 echo -e " \033[1;32m[OK]"
 msg -bar
 echo -e "${cor[3]}$(fun_trans  "SQUID CONFIGURADO")"
