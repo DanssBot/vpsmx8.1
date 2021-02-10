@@ -179,14 +179,14 @@ msg -bar
 echo -e " ${cor[3]}             AJUSTES INTERNOS DEL VPS  "
 msg -bar
 while true; do
-echo -e "${cor[4]} [1] > \033[1;36mACTULIZAR VPS"
+echo -e "${cor[4]} [1] > \033[1;36mACTUALIZAR VPS"
 echo -e "${cor[4]} [2] > \033[1;36mREINICIAR SERVICIOS"
 echo -e "${cor[4]} [3] > \033[1;36mREINICIAR VPS"
 echo -e "${cor[4]} [4] > \033[1;36mCAMBIAR HOSTNAME VPS"
 echo -e "${cor[4]} [5] > \033[1;36mCAMBIAR CONTRASEÑA ROOT"
 echo -e "${cor[4]} [6] > \033[1;36mCAMBIAR HORA LOCAL MX"
-echo -e "${cor[4]} [7] > \033[1;36mCAMBIAR HORA LOCAL MX"
-echo -e "${cor[2]} [8] > \033[1;100mAGREGAR ROOT a GoogleCloud y Amazon \033[0;37m"
+echo -e "${cor[4]} [7] > \033[1;36mCAMBIAR HORA LOCAL ARG"
+echo -e "${cor[4]} [8] > \033[1;36mAGREGAR ROOT a GoogleCloud y Amazon"
 echo -e "${cor[4]} [0] > VOLVER"
 while [[ ${opx} != @(0|[1-9]) ]]; do
 msg -bar
