@@ -163,26 +163,20 @@ rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
 function ssl_stunel_3 () {
-echo -e "Escriba un NOMBRE para el Redireccionador SSL"
-read -p ": " nombressl
-msg -bar
-echo -e "Escriba el Local-Port:"
-read -p ": " portserv
-msg -bar
-echo -e "Escriba Nuevo Puerto SSL"
-read -p ": " portssl
-if lsof -Pi :$portssl -sTCP:LISTEN -t >/dev/null ; then
-echo "Ya esta en uso ese puerto"
-else
-echo "[$nombressl] " >> /etc/stunnel/stunnel.conf
-echo "cert = /etc/stunnel/stunnel.pem " >> /etc/stunnel/stunnel.conf
-echo "accept = $portssl " >> /etc/stunnel/stunnel.conf
-echo "connect = 127.0.0.1:$portserv" >> /etc/stunnel/stunnel.conf
-sleep 5
-echo "Reiniciando Servicio : Stunnel4"
-service stunnel4 restart 1> /dev/null 2> /dev/null
-sleep 5
-fi
+apt-get install -y git autoconf libtool
+git clone https://github.com/wolfssl/wolfssl.git
+cd wolfssl/
+./autogen.sh
+./configure --enable-sha512
+make
+make install
+ldconfig
+./configure --enable-stunnel --enable-tls13
+make
+make install
+ldconfig
+service stunnel4 restart
+cd /root
 }
 echo -e "${cor[3]}INSTALAR CERTIFICADO SSL"
 msg -bar
