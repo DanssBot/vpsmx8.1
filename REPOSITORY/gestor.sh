@@ -174,7 +174,7 @@ echo -e " FECHA LOCAL ARG APLICADA!"
 gestor_fun () {
 clear
 msg -bar
-echo -e "\033[1;37m       =====>>►► 🐲 PANEL VPS•MX 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\033[1;37m       =====>>►► PANEL ADMIN VPS ◄◄<<=====       \033[1;37m"
 msg -bar
 echo -e " ${cor[3]}             AJUSTES INTERNOS DEL VPS  "
 msg -bar
