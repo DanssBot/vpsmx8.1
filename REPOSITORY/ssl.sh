@@ -71,7 +71,7 @@ echo -e "\033[1;33m $(fun_trans  "Parado Con Exito!")"
 msg -bar
 return 0
 }
-echo -e "\033[1;32m $(fun_trans  "INSTALADOR SSL By MOD MX")"
+echo -e "\033[1;32m $(fun_trans  "INSTALADOR SSL")"
 msg -bar
 echo -e "\033[1;33m $(fun_trans  "Seleccione una puerta de redirección interna.")"
 echo -e "\033[1;33m $(fun_trans  "Es decir, un puerto en su servidor para SSL")"
@@ -121,7 +121,7 @@ rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
 ssl_stunel_2 () {
-echo -e "\033[1;32m $(fun_trans  "INSTALADOR SSL By @Kalix1")"
+echo -e "\033[1;32m $(fun_trans  "INSTALADOR SSL")"
 msg -bar
 echo -e "\033[1;33m $(fun_trans  "Seleccione una puerta de redirección interna.")"
 echo -e "\033[1;33m $(fun_trans  "Es decir, un puerto en su servidor para SSL")"
@@ -162,12 +162,35 @@ rm -rf /root/stunnel.crt > /dev/null 2>&1
 rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
-echo -e "${cor[3]}INSTALADOR SSL By @Kalix1"
+function ssl_stunel_3 () {
+echo -e "Escriba un NOMBRE para el Redireccionador SSL"
+read -p ": " nombressl
+msg -bar
+echo -e "Escriba el Local-Port:"
+read -p ": " portserv
+msg -bar
+echo -e "Escriba Nuevo Puerto SSL"
+read -p ": " portssl
+if lsof -Pi :$portssl -sTCP:LISTEN -t >/dev/null ; then
+echo "Ya esta en uso ese puerto"
+else
+echo "[$nombressl] " >> /etc/stunnel/stunnel.conf
+echo "cert = /etc/stunnel/stunnel.pem " >> /etc/stunnel/stunnel.conf
+echo "accept = $portssl " >> /etc/stunnel/stunnel.conf
+echo "connect = 127.0.0.1:$portserv" >> /etc/stunnel/stunnel.conf
+sleep 5
+echo "Reiniciando Servicio : Stunnel4"
+service stunnel4 restart 1> /dev/null 2> /dev/null
+sleep 5
+fi
+}
+echo -e "${cor[3]}INSTALAR CERTIFICADO SSL"
 msg -bar
 echo -e "${cor[1]} Escoja la opcion deseada."
 msg -bar
 echo "1).- INICIAR O PARAR SSL"
-echo "2).- AGREGAR PUERTOS SSL"
+echo "2).- AGREGAR OTRO PUERTO SSL"
+echo "3).- INSTALAR SSL 1.3"
 msg -bar
 echo -n "Digite solo el numero segun su respuesta: "
 read opcao
@@ -181,6 +204,9 @@ msg -bar
 echo -e "\033[1;93m  AGREGAR SSL EXTRA  ..."
 msg -bar
 ssl_stunel_2
+3)
+msg -bar
+ssl_stunel_3
 sleep 3
 exit
 ;;
