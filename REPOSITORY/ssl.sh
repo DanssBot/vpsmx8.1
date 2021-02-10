@@ -162,22 +162,6 @@ rm -rf /root/stunnel.crt > /dev/null 2>&1
 rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
-function ssl_stunel_3 () {
-apt-get install -y git autoconf libtool
-git clone https://github.com/wolfssl/wolfssl.git
-cd wolfssl/
-./autogen.sh
-./configure --enable-sha512
-make
-make install
-ldconfig
-./configure --enable-stunnel --enable-tls13
-make
-make install
-ldconfig
-service stunnel4 restart
-cd /root
-}
 echo -e "${cor[3]}INSTALAR CERTIFICADO SSL"
 msg -bar
 echo -e "${cor[1]} Escoja la opcion deseada."
@@ -199,9 +183,6 @@ echo -e "\033[1;93m  AGREGAR SSL EXTRA  ..."
 msg -bar
 ssl_stunel_2
 ;;
-3)
-msg -bar
-ssl_stunel_3
 sleep 3
 exit
 ;;
