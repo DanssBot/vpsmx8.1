@@ -7,7 +7,9 @@ trojanserver () {
 echo -e "\033[1;33m Se instalará el servidor de Trojan\033[0m"
 echo -e "\033[1;33m Si ya tenías una instalacion Previa, esta se eliminara\033[0m"
 echo -e "\033[1;33m Debes tener instalado previamente GO Lang\033[0m"
+msg -bar
 echo -e "\033[1;33m IMPORTANTE DEBES TENER LIBRES PUERTOS 80 / 443\033[0m"
+msg -bar
 echo -e "\033[1;33m Continuar?\033[0m"
 while [[ ${yesno} != @(s|S|y|Y|n|N) ]]; do
 read -p "[S/N]: " yesno
@@ -43,6 +45,7 @@ echo -e "\033[1;33mEl puerto del servidor es: \033[1;32m $trojanport"
 echo -e "\033[1;33mEl password del servidor es: \033[1;32m $trojanpass"
 echo -e "\033[1;33mSi necesitas cambiar el password edita el archivo o Reinstala tu servidor"
 echo -e "\033[1;32mRuta de Configuracion: /usr/local/etc/trojan/config.json"
+echo -e "[\033[1;31m-\033[1;33m]\033[1;31m ───────────────────────────────────────\033[1;33m"
 echo -e "\033[1;31mPRESIONE ENTER PARA CONTINUAR\033[0m"
 read -p " "
 menu
@@ -56,13 +59,14 @@ read -p "[S/N]: " yesno
 tput cuu1 && tput dl1
 done
 if [[ ${yesno} = @(s|S|y|Y) ]]; then
-echo -e "Instalando..."
+msg -bar
+echo -e "\033[1;32m Instalando... \033[0m"
 cd
 rm -rf /usr/local/go 1> /dev/null 2> /dev/null
 wget https://golang.org/dl/go1.15.linux-amd64.tar.gz 1> /dev/null 2> /dev/null
 tar -C /usr/local -xzf go1.15.linux-amd64.tar.gz
 if cat /root/.bashrc | grep GOROOT; then
-echo -e "Ya existe un GoROOT - Skipping"
+echo -e "Ya existe un GoROOT - Omitiendo"
 else
 sed -i '$a export GOROOT=/usr/local/go' /root/.bashrc
 sed -i '$a export GOPATH=$HOME/go' /root/.bashrc
@@ -74,23 +78,23 @@ sleep 5
 echo -e "Reiniciando Fuente de Terminal..."
 fi
 echo -e "\033[1;33m Para finalizar el proceso de Instalacion de GO escribe :\033[0m"
-echo -e "\033[1;32m source ~/.profile\033[0m"
 echo -e "\033[1;31mPRESIONE ENTER PARA CONTINUAR\033[0m"
 read -p " "
 exit 0
 }
 
-msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
+msg -ama "$(fun_trans "INSTALAR TROJAN SERVER")"
 msg -bar
-echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR TROJAN SERVER") "
-echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "INSTALAR Go Lang") "
+echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR Go Lang") "
+echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "INSTALAR TROJAN SERVER") "
+msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-5]) ]]; do
-read -p "[0-5]: " arquivoonlineadm
+read -p "[0-3]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
-1)trojanserver;;
-2)goinst;;
+1)goinst;;
+2)trojanserver;;
 esac
 msg -bar
