@@ -87,7 +87,7 @@ msg -ama "$(fun_trans "INSTALAR TROJAN SERVER")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR Go Lang") "
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "INSTALAR TROJAN SERVER") "
-msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
+echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-5]) ]]; do
 read -p "[0-3]: " arquivoonlineadm
