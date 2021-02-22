@@ -166,8 +166,9 @@ echo -e "${cor[3]}INSTALADOR SSL"
 msg -bar
 echo -e "${cor[1]} Seleccione la opcion deseada."
 msg -bar
-echo "1).- ININICIAR O PARAR SSL"
+echo "1).- INSTALAR O DETENER SSL"
 echo "2).- AGREGAR PUERTOS SSL"
+echo "0).- REGRESAR AL MENU"
 msg -bar
 echo -n "Digite solo el numero segun su respuesta: "
 read opcao
