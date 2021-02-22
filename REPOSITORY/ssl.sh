@@ -22,12 +22,12 @@ fun_eth () {
 eth=$(ifconfig | grep -v inet6 | grep -v lo | grep -v 127.0.0.1 | grep "encap:Ethernet" | awk '{print $1}')
     [[ $eth != "" ]] && {
     msg -bar
-    echo -e "${cor[3]} $(fun_trans  "Aplicar el sistema para mejorar los paquetes SSH?")"
-    echo -e "${cor[3]} $(fun_trans  "Opciones para usuarios avanzados")"
+    echo -e "${cor[3]} Aplicar el sistema para mejorar los paquetes SSH"
+    echo -e "${cor[3]} Opciones para usuarios avanzados"
     msg -bar
     read -p " [S/N]: " -e -i n sshsn
            [[ "$sshsn" = @(s|S|y|Y) ]] && {
-           echo -e "${cor[1]} $(fun_trans  "Corrección de problemas de paquetes en SSH...")"
+           echo -e "${cor[1]} Corrección de problemas de paquetes en SSH..."
            echo -e " $(fun_trans  "¿Cual es la tasa RX?")"
            echo -ne "[ 1 - 999999999 ]: "; read rx
            [[ "$rx" = "" ]] && rx="999999999"
@@ -67,14 +67,14 @@ echo -e "\033[1;33m $(fun_trans  "Parando Stunnel")"
 msg -bar
 fun_bar "apt-get purge stunnel4 -y"
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "Parado Con Exito!")"
+echo -e "\033[1;33m Parado Con Exito!"
 msg -bar
 return 0
 }
-echo -e "\033[1;32m $(fun_trans  "INSTALADOR SSL")"
+echo -e "\033[1;32m INSTALADOR SSL"
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "Seleccione una puerta de redirección interna.")"
-echo -e "\033[1;33m $(fun_trans  "Es decir, un puerto en su servidor para SSL")"
+echo -e "\033[1;33m Seleccione una puerta de redirección interna."
+echo -e "\033[1;33m Es decir, un puerto en su servidor para SSL"
 msg -bar
          while true; do
          echo -ne "\033[1;37m"
@@ -87,23 +87,23 @@ msg -bar
          done
 msg -bar
 DPORT="$(mportas|grep $portx|awk '{print $2}'|head -1)"
-echo -e "\033[1;33m $(fun_trans  "Ahora Prestamos Saber Que Puerta del SSL, Va a Escuchar")"
+echo -e "\033[1;33m Ahora Escriba el Puerto SSL"
 msg -bar
     while true; do
     read -p " Listen-SSL: " SSLPORT
     [[ $(mportas|grep -w "$SSLPORT") ]] || break
-    echo -e "\033[1;33m $(fun_trans  "Esta puerta está en uso")"
+    echo -e "\033[1;33m Esta puerta está en uso"
     unset SSLPORT
     done
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "Instalando SSL")"
+echo -e "\033[1;33m Iniciando la configuracion SSL"
 msg -bar
 fun_bar "apt-get install stunnel4 -y"
 echo -e "client = no\n[SSL]\ncert = /etc/stunnel/stunnel.pem\naccept = ${SSLPORT}\nconnect = 127.0.0.1:${DPORT}" > /etc/stunnel/stunnel.conf
 ####Coreccion2.0##### 
 openssl genrsa -out stunnel.key 2048 > /dev/null 2>&1
 
-(echo "mx" ; echo "mx" ; echo "mx" ; echo "mx" ; echo "mx" ; echo "mx" ; echo "@felcouoh@hotmail.com" )|openssl req -new -key stunnel.key -x509 -days 1000 -out stunnel.crt > /dev/null 2>&1
+(echo "mx" ; echo "mx" ; echo "mx" ; echo "vpspremium.com.mx" ; echo "mx" ; echo "mx" ; echo "@felcouoh@hotmail.com" )|openssl req -new -key stunnel.key -x509 -days 1000 -out stunnel.crt > /dev/null 2>&1
 
 cat stunnel.crt stunnel.key > stunnel.pem 
 
@@ -112,7 +112,7 @@ mv stunnel.pem /etc/stunnel/
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 service stunnel4 restart > /dev/null 2>&1
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "INSTALADO CON EXITO")"
+echo -e "\033[1;33m INSTALADO CON EXITO"
 msg -bar
 rm -rf /etc/ger-frm/stunnel.crt > /dev/null 2>&1
 rm -rf /etc/ger-frm/stunnel.key > /dev/null 2>&1
@@ -121,32 +121,32 @@ rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
 ssl_stunel_2 () {
-echo -e "\033[1;32m $(fun_trans  "INSTALADOR SSL")"
+echo -e "\033[1;32m INSTALADOR SSL"
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "Seleccione una puerta de redirección interna.")"
-echo -e "\033[1;33m $(fun_trans  "Es decir, un puerto en su servidor para SSL")"
+echo -e "\033[1;33m Escriba el puerto de redirección"
+echo -e "\033[1;33m SSH, Dropbear o para OpenVpn"
 msg -bar
          while true; do
          echo -ne "\033[1;37m"
          read -p " Local-Port: " portx
          if [[ ! -z $portx ]]; then
              if [[ $(echo $portx|grep [0-9]) ]]; then
-                [[ $(mportas|grep $portx|head -1) ]] && break || echo -e "\033[1;31m $(fun_trans  "Puerta invalida")"
+                [[ $(mportas|grep $portx|head -1) ]] && break || echo -e "\033[1;31m Puerta invalida"
              fi
          fi
          done
 msg -bar
 DPORT="$(mportas|grep $portx|awk '{print $2}'|head -1)"
-echo -e "\033[1;33m $(fun_trans  "Ahora Prestamos Saber Que Puerta del SSL, Va a Escuchar")"
+echo -e "\033[1;33m Escriba el Puerto del SSL"
 msg -bar
     while true; do
     read -p " Listen-SSL: " SSLPORT
     [[ $(mportas|grep -w "$SSLPORT") ]] || break
-    echo -e "\033[1;33m $(fun_trans  "Esta puerta está en uso")"
+    echo -e "\033[1;33m Este puerto está en uso"
     unset SSLPORT
     done
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "Instalando SSL")"
+echo -e "\033[1;33m Instalando SSL"
 msg -bar
 fun_bar "apt-get install stunnel4 -y"
 echo -e "client = no\n[SSL+]\ncert = /etc/stunnel/stunnel.pem\naccept = ${SSLPORT}\nconnect = 127.0.0.1:${DPORT}" >> /etc/stunnel/stunnel.conf
@@ -154,7 +154,7 @@ echo -e "client = no\n[SSL+]\ncert = /etc/stunnel/stunnel.pem\naccept = ${SSLPOR
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 service stunnel4 restart > /dev/null 2>&1
 msg -bar
-echo -e "\033[1;33m $(fun_trans  "INSTALADO CON EXITO")"
+echo -e "\033[1;33m INSTALADO CON EXITO"
 msg -bar
 rm -rf /etc/ger-frm/stunnel.crt > /dev/null 2>&1
 rm -rf /etc/ger-frm/stunnel.key > /dev/null 2>&1
@@ -162,14 +162,14 @@ rm -rf /root/stunnel.crt > /dev/null 2>&1
 rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
-echo -e "${cor[3]}INSTALAR CERTIFICADO SSL"
+echo -e "${cor[3]}INSTALADOR SSL"
 msg -bar
-echo -e "${cor[1]} Escoja la opcion deseada."
+echo -e "${cor[1]} Seleccione la opcion deseada."
 msg -bar
-echo "1).- INICIAR O PARAR PUERTOS SSL"
-echo "2).- AGREGAR OTRO PUERTO SSL"
+echo "1).- ININICIAR O PARAR SSL"
+echo "2).- AGREGAR PUERTOS SSL"
 msg -bar
-echo -n "Seleccione una opcion: "
+echo -n "Digite solo el numero segun su respuesta: "
 read opcao
 case $opcao in
 1)
@@ -181,7 +181,6 @@ msg -bar
 echo -e "\033[1;93m  AGREGAR SSL EXTRA  ..."
 msg -bar
 ssl_stunel_2
-;;
 sleep 3
 exit
 ;;
