@@ -168,7 +168,6 @@ echo -e "${cor[1]} Escoja la opcion deseada."
 msg -bar
 echo "1).- INICIAR O PARAR PUERTOS SSL"
 echo "2).- AGREGAR OTRO PUERTO SSL"
-echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
 echo -n "Seleccione una opcion: "
 read opcao
