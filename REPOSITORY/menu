@@ -37,7 +37,7 @@ msg () {
 local colors="/etc/new-adm-color"
 if [[ ! -e $colors ]]; then
 COLOR[0]='\033[1;37m' #BRAN='\033[1;37m'
-COLOR[1]='\e[31m' #VERMELHO='\e[31m'
+COLOR[1]='\e[35m' #MORADO='\e[31m'
 COLOR[2]='\e[32m' #VERDE='\e[32m'
 COLOR[3]='\e[33m' #AMARELO='\e[33m'
 COLOR[4]='\e[34m' #AZUL='\e[34m'
