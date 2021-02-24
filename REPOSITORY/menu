@@ -704,7 +704,7 @@ echo -e "\033[1;37m       =====>>►► •PANEL ADMIN VPS• ◄◄<<=====     
 msg -bar
 export -f fun_eth
 export -f fun_bar
-menuTXT="VOLVER"
+menuTXT="REGRESAR AL MENU"
 msg -ama "                  MENU DE PROTOCOLOS "
 msg -bar
 local Numb=1
@@ -714,6 +714,7 @@ float_data "$arqs" "$Numb" && {
   let Numb++
   }
 done
+msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41m $menuTXT "
 echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") " && msg -bra "$menuTXT"
 msg -bar
 script[0]="voltar"
