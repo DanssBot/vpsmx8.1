@@ -8,6 +8,7 @@ SCPidioma="${SCPdir}/idioma"
 SCPusr="${SCPdir}/ger-user"
 SCPfrm="/etc/ger-frm"
 SCPinst="/etc/ger-inst"
+fecha=`date`;
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 #TESTIANDO SCRIPTS
@@ -218,7 +219,7 @@ echo 'echo "" '>> .bashrc
 echo 'echo -e "\033[97m   PARA MOSTAR EL MENU ESCRIBA:  menu o adm "'>> .bashrc
 echo 'echo ""'>> .bashrc
 echo 'echo -e "	\e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"' >> .bashrc
-echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $_hora \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"' >> .bashrc
 echo 'echo -e "	\e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
