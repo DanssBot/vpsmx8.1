@@ -37,7 +37,7 @@ port () {
 v2ray port
 }
 
-msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
+msg -ama "$(fun_trans "MENU V2RAY")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR V2RAY") "
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "CAMBIAR PROTOCOLO") "
