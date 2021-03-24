@@ -114,7 +114,38 @@ msg -bar
 echo -e "\e[92m           UUID AGREGEGADO CON EXITO "
 msg -bar
 }
-msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
+delusr () {
+clear 
+clear
+invaliduuid () {
+msg -bar
+echo -e "\e[91m                    UUID INVALIDO \n$(msg -bar)"
+msg -ne "Enter Para Continuar" && read enter
+${SCPinst}/v2ray.sh
+}
+msg -bar
+msg -tit
+msg -ama "             ELIMINAR USUARIO | UUID V2RAY"
+msg -bar
+echo -e "\e[97m               USUARIOS REGISTRADOS"
+echo -e "\e[33m$(cat /etc/RegV2ray|cut -d '|' -f2,1)" 
+msg -bar
+echo -ne "\e[91m >> Digita el UUID a elininar:\n \033[1;92m " && read uuidel
+[[ $(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json|head -1) ]] || invaliduuid
+lineP=$(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json)
+linePre=$(sed -n '/'${uuidel}'/=' /etc/RegV2ray)
+sed -i "${linePre}d" /etc/RegV2ray
+numl1=2
+let resta=$lineP-$numl1
+sed -i "${resta}d" /etc/v2ray/config.json
+sed -i "${resta}d" /etc/v2ray/config.json
+sed -i "${resta}d" /etc/v2ray/config.json
+sed -i "${resta}d" /etc/v2ray/config.json
+sed -i "${resta}d" /etc/v2ray/config.json
+v2ray restart > /dev/null 2>&1
+msg -bar
+}
+msg -ama "$(fun_trans "MENU V2RAY")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR V2RAY") "
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "CAMBIAR PROTOCOLO") "
@@ -123,10 +154,11 @@ echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "CAMBIAR PUERTO") "
 echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "INFORMACION DE CUENTA")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "DESINTALAR V2RAY")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "AGREGAR USUARIO UUID")"
+echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "AGREGAR USUARIO UUID")"
 msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
-while [[ ${arquivoonlineadm} != @(0|[1-7]) ]]; do
-read -p "[0-7]: " arquivoonlineadm
+while [[ ${arquivoonlineadm} != @(0|[1-8]) ]]; do
+read -p "[0-8]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
@@ -137,6 +169,7 @@ case $arquivoonlineadm in
 5)infocuenta;;
 6)unistallv2;;
 7)addusr;;
+8)delusr;;
 0)exit;;
 esac
 msg -bar
