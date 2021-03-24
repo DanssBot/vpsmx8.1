@@ -154,7 +154,7 @@ echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "CAMBIAR PUERTO") "
 echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "INFORMACION DE CUENTA")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "DESINTALAR V2RAY")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "AGREGAR USUARIO UUID")"
-echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "AGREGAR USUARIO UUID")"
+echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "ELIMINAR USUARIO UUID")"
 msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-8]) ]]; do
