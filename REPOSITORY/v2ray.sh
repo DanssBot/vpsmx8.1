@@ -101,14 +101,14 @@ done
 valid=$(date '+%C%y-%m-%d' -d " +$diasuser days") && datexp=$(date "+%F" -d " + $diasuser days")
 echo -e "\e[91m >> Expira el : \e[92m$datexp "
 ##Registro
-echo "  $UUID | $nick | $valid " >> /etc/VPS-MX/RegV2ray
+echo "  $UUID | $nick | $valid " >> /etc/RegV2ray
 v2ray restart > /dev/null 2>&1
 echo ""
-v2ray info > /etc/VPS-MX/v2ray/confuuid.log
-lineP=$(sed -n '/'${UUID}'/=' /etc/VPS-MX/v2ray/confuuid.log)
+v2ray info > /var/log/v2ray/access.log
+lineP=$(sed -n '/'${UUID}'/=' /var/log/v2ray/access.log)
 numl1=4
 let suma=$lineP+$numl1
-sed -n ${suma}p /etc/VPS-MX/v2ray/confuuid.log 
+sed -n ${suma}p /var/log/v2ray/access.log 
 echo ""
 msg -bar
 echo -e "\e[92m           UUID AGREGEGADO CON EXITO "
