@@ -275,19 +275,16 @@ echo ""
 msg -bar
 msg -ne "Enter Para Continuar" && read enter
 ${SCPinst}/v2ray.sh
-
 }
 port () {
 v2ray port
 }
-
 msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "INSTALAR V2RAY") "
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "CAMBIAR PROTOCOLO") "
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "ACTIVAR TLS") "
 echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "CAMBIAR PUERTO") "
-
 echo -ne "\033[1;32m [5] > " && msg -azu "AGREGAR USUARIO UUID "
 echo -ne "\033[1;32m [6] > " && msg -azu "ELIMINAR USUARIO UUID"
 echo -ne "\033[1;32m [7] > " && msg -azu "MOSTAR USUARIOS REGISTRADOS"
@@ -295,7 +292,6 @@ echo -ne "\033[1;32m [8] > " && msg -azu "INFORMACION DE CUENTAS"
 echo -ne "\033[1;32m [9] > " && msg -azu "ESTADISTICAS DE CONSUMO "
 echo -ne "\033[1;32m [10] > " && msg -azu "LIMITADOR POR CONSUMO\e[91m ( POR PUERTO )"
 echo -ne "\033[1;32m [11] > " && msg -azu "LIMPIADOR DE EXPIRADOS ------- $statgen\n"
-
 echo -ne "\033[1;32m [12] > " && msg -azu "$(fun_trans "INFORMACION DE CUENTA")"
 echo -ne "\033[1;32m [13] > " && msg -azu "$(fun_trans "DESINTALAR V2RAY")"
 msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
@@ -309,7 +305,6 @@ case $arquivoonlineadm in
 2)protocolv2ray;;
 3)tls;;
 4)port;;
-
 5)addusr;;
 6)delusr;;
 7)mosusr_kk;;
@@ -317,7 +312,6 @@ case $arquivoonlineadm in
 9)stats;;
 10)lim_port;;
 11)limpiador_activador;;
-
 12)infocuenta;;
 13)unistallv2;;
 0)exit;;
