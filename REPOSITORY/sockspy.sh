@@ -64,7 +64,18 @@ PythonDic_fun () {
 echo -e "\033[1;97mSelecciona Puerto Local\033[1;37m" 
 msg -bar
 echo -ne "Digite Un Puerto SSH/DROPBEAR activo: \033[1;37m" && read puetoantla 
- msg -bar
+msg -bar
+[[ -z $response2 ]] && {
+	msg -bar
+	echo -e "\033[1;31mRESPUESTA PERSONALIZADA\033[0m"
+	msg -bar
+	echo -ne "\033[1;49;37mEnter por defecto (200): "
+	read response2
+	if [[ -z $response2  ]]; then
+		response2="200"
+	fi
+}
+msg -bar
 (
 less << PYTHON  > /etc/ger-inst/PDirect.py
 import socket, threading, thread, select, signal, sys, time, getopt
@@ -82,7 +93,7 @@ PASS = ''
 BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:$puetoantla'
-RESPONSE = 'HTTP/1.1 200 <strong>$texto_soket</strong>\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 Connection established\r\n\r\n'
+RESPONSE = 'HTTP/1.1 $response2 <strong>$texto_soket</strong>\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 Connection established\r\n\r\n'
 #RESPONSE = 'HTTP/1.1 200 Hello_World!\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 Connection established\r\n\r\n'  # lint:ok
 
 class Server(threading.Thread):
