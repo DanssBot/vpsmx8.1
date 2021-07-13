@@ -66,7 +66,6 @@ msg -bar
 echo -ne "Digite Un Puerto SSH/DROPBEAR activo: \033[1;37m" && read puetoantla 
 msg -bar
 [[ -z $response2 ]] && {
-	msg -bar
 	echo -e "\033[1;31mRESPUESTA PERSONALIZADA\033[0m"
 	msg -bar
 	echo -ne "\033[1;49;37mEnter por defecto (200): "
