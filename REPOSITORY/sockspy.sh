@@ -393,7 +393,7 @@ echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans  "Socks Python OPENVPN") $P4"
 echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans  "Socks Python GETTUNEL") $P5"
 echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans  "Socks Python TCP BYPASS") $P6"
 echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans  "PARAR TODOS SOCKS PYTHON")"
-echo -e "${cor[4]} [0] > \033[1;37m$(fun_trans  "VOLVER")"
+msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
 IP=(meu_ip)
 while [[ -z $portproxy || $portproxy != @(0|[1-7]) ]]; do
