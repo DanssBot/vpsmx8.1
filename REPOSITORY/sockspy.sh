@@ -61,7 +61,7 @@ screen -dmS getpy python ${SCPinst}/PGet.py -b "0.0.0.0:$1" -p "${SCPinst}/pwd.p
 }
 
 PythonDic_fun () {
-echo -e "\033[1;97mSelecciona Puerto Local\033[1;37m" 
+echo -e "\033[1;36mEscribe el Puerto de redireccionamiento" 
 msg -bar
 echo -e "\033[1;36mDigite Un Puerto SSH/DROPBEAR activo: \033[1;32m" && read puetoantla 
 msg -bar
@@ -404,16 +404,16 @@ done
     7)remove_fun;;
     0)return;;
  esac
-echo -e "Selecciona Puerto Principal del Proxy"
+echo -e "\033[1;35mDSelecciona Puerto Principal del Proxy"
 msg -bar
 porta_socket=
 while [[ -z $porta_socket || ! -z $(mportas|grep -w $porta_socket) ]]; do
-echo -ne "Digite el Puerto: \033[1;37m" && read porta_socket
+echo -e "\033[1;35mDigite el Puerto: \033[1;32m" && read porta_socket
 tput cuu1 && tput dl1
 done
 echo -e "$(fun_trans  "Introdusca su Mini-Banner")"
 msg -bar
-echo -ne "Introduzca el texto de estado plano o en HTML:\n \033[1;37m" && read texto_soket
+echo -e "\033[1;35mIntroduzca el texto de estado, plano o HTML:\n \033[1;32m" && read texto_soket
     msg -bar
     case $portproxy in
     1)screen -dmS screen python ${SCPinst}/PPub.py "$porta_socket" "$texto_soket";;
