@@ -63,13 +63,12 @@ screen -dmS getpy python ${SCPinst}/PGet.py -b "0.0.0.0:$1" -p "${SCPinst}/pwd.p
 PythonDic_fun () {
 echo -e "\033[1;97mSelecciona Puerto Local\033[1;37m" 
 msg -bar
-echo -ne "Digite Un Puerto SSH/DROPBEAR activo: \033[1;37m" && read puetoantla 
+echo -e "\033[1;36mDigite Un Puerto SSH/DROPBEAR activo: \033[1;32m" && read puetoantla 
 msg -bar
 [[ -z $response2 ]] && {
 	echo -e "\033[1;31mRESPUESTA PERSONALIZADA\033[0m"
 	msg -bar
-	echo -ne "\033[1;49;37mEnter por defecto (200): "
-	read response2
+	echo -e "\033[1;36mEnter por defecto (200): \033[1;32m" && read response2
 	if [[ -z $response2  ]]; then
 		response2="200"
 	fi
