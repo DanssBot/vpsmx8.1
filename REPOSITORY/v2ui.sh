@@ -19,7 +19,7 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 
 #bash <(curl -sSL https://www.dropbox.com/s/nxrrdrwjyvj9j37/install.sh) > /dev/null 2>&1
 bash <(curl -sSL https://raw.githubusercontent.com/diesel09/v2-ui/master/install.sh) > /dev/null 2>&1
-bash <(curl -Ls https://raw.githubusercontent.com/diesel09/v2-ui/master/v2-ui.sh  > /dev/null 2>&1
+bash <(curl -Ls https://raw.githubusercontent.com/diesel09/v2-ui/master/v2-ui.sh ) > /dev/null 2>&1
 fun_ip
 autogen() {
 v2-ui start  > /dev/null 2>&1
