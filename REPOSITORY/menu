@@ -134,7 +134,7 @@ if [[ $Key = @(s|S|y|Y) ]]; then
 msg -verm "Perfecto, Iniciando Actualizacion: "
 echo " "
 echo -e " \033[1;32m[ Nueva Version Encontrada! ] "
-wget -O $HOME/OnlyCodeMX4.5.sh wget https://raw.githubusercontent.com/diesel09/mxvps/master/vps-mx-free/instalscript.sh &> /dev/null
+wget -O $HOME/instalscript.sh wget https://raw.githubusercontent.com/diesel09/mxvps/master/vps-mx-free/instalscript.sh &> /dev/null
 chmod +x $HOME/instalscript.sh*
 local LINGUAGE=$(cat ${SCPidioma})
 $HOME/instalscript.sh "${LINGUAGE}"
