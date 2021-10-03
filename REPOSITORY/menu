@@ -559,6 +559,8 @@ case $1 in
 "v2ray.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "V2RAY $(pid_inst v2ray)";; 
 "budp.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "BADVPN-(UDP:7300) $(pid_inst badvpn)";;
 "trojanserver.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "TROJAN SERVER $(pid_inst trojan)";;
+"v2ui.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "V2RAY PANEL WEB $(pid_inst v2ui)";;
+
 
 
 "paysnd.sh")return 1;;
