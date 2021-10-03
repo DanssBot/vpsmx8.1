@@ -133,12 +133,12 @@ done
 if [[ $Key = @(s|S|y|Y) ]]; then
 msg -verm "Perfecto, Iniciando Actualizacion: "
 echo " "
-echo -e " \033[1;32m[ Su Version esta Actualizada! V8.1 ] "
-wget -O $HOME/OnlyCodeMX4.5.sh https://www.dropbox.com/s/pl5g40tjlinxmcg/OnlyCodeMX4.5.sh &> /dev/null
-chmod +x $HOME/OnlyCodeMX4.5.sh*
+echo -e " \033[1;32m[ Nueva Version Encontrada! ] "
+wget -O $HOME/OnlyCodeMX4.5.sh wget https://raw.githubusercontent.com/diesel09/mxvps/master/vps-mx-free/instalscript.sh &> /dev/null
+chmod +x $HOME/instalscript.sh*
 local LINGUAGE=$(cat ${SCPidioma})
-$HOME/OnlyCodeMX4.5.sh "${LINGUAGE}"
-rm -rf OnlyCodeMX4.5.sh
+$HOME/instalscript.sh "${LINGUAGE}"
+rm -rf instalscript.sh
 msg -bar
 else
 msg -verm "Procedimiento Cancelado: "
