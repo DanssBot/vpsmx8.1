@@ -295,7 +295,7 @@ NOM1="$(echo $NOM)"
 IDB1=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
 
-KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+KEY="2061678546:AAE705PXyD8sHy8hTV0SRv0jEsIAgtpYhuo"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 👉 MENSAJE DE PRUEBA
