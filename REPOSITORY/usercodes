@@ -827,7 +827,7 @@ verif_fun () {
            local DataSEC=$(date +%s --date="$DataUser")
            if [[ "$DataSEC" -lt "$TimeNOW" ]]; then
               EXPIRED="1+"          
-              block_userfun $user -loked && echo " $user (EXPIRADO) $(date +%r--%d/%m/%y)" >> $LIMITERLOG && echo " $user (EXPIRADO) $(date +%r--%d/%m/%y)" >> $LIMITERLOG2 && KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+              block_userfun $user -loked && echo " $user (EXPIRADO) $(date +%r--%d/%m/%y)" >> $LIMITERLOG && echo " $user (EXPIRADO) $(date +%r--%d/%m/%y)" >> $LIMITERLOG2 && KEY="2061678546:AAE705PXyD8sHy8hTV0SRv0jEsIAgtpYhuo"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 🔹 CUENTA: $user 
