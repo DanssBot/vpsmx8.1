@@ -162,12 +162,19 @@ rm -rf /root/stunnel.crt > /dev/null 2>&1
 rm -rf /root/stunnel.key > /dev/null 2>&1
 return 0
 }
+ssl_py () {
+source <(curl -sL https://raw.githubusercontent.com/diesel09/genmx8.3/master/GENERADOR-VPS-MX/gerador/payssl.sh)
+msg -ama "$(fun_trans "Instalado con Exito")!"
+}
+clear
+msg -bar
 echo -e "${cor[3]}INSTALADOR SSL"
 msg -bar
 echo -e "${cor[1]} Seleccione la opcion deseada."
 msg -bar
 echo "1).- INSTALAR O DETENER SSL"
 echo "2).- AGREGAR PUERTOS EXTRAS SSL"
+echo "3).- SSL+PYDIREC (AUTO CONFIGURACION)   "
 echo "0).- REGRESAR AL MENU"
 msg -bar
 echo -n "Digite solo el numero segun su respuesta: "
@@ -182,6 +189,10 @@ msg -bar
 echo -e "\033[1;93m  AGREGAR SSL EXTRA  ..."
 msg -bar
 ssl_stunel_2
+;;
+3)
+msg -bar
+ssl_py
 sleep 3
 exit
 ;;
