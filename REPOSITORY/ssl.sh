@@ -175,7 +175,7 @@ msg -bar
 echo "1).- INSTALAR O DETENER SSL"
 echo "2).- AGREGAR PUERTOS EXTRAS SSL"
 echo "3).- SSL+PYDIREC (AUTO CONFIGURACION)   "
-echo "0).- REGRESAR AL MENU"
+msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mREGRESAR AL MENU"
 msg -bar
 echo -n "Digite solo el numero segun su respuesta: "
 read opcao
