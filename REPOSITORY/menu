@@ -934,7 +934,7 @@ menu_func "ADMINISTRAR CUENTAS (SSH/SSL/DROPBEAR)" "ADMINISTRAR CUENTAS (SS/SSRR
 msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mSALIR DEL SCRIPT"
 msg -bar
 # FIM
-selection=$(selection_fun 10)
+selection=$(selection_fun 11)
 case ${selection} in
 1)${SCPusr}/usercodes "${idioma}" ;;
 2)${SCPinst}/C-SSR.sh ;;
