@@ -324,13 +324,13 @@ Key="VpsPremium.com.mx-K?%ab97cda8f?K81mx@+95+94@"
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
-   #echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"   
-   #echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
+   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"   
+   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
    echo -e "${cor[2]}         Gracias por apoyar el proyecto"   
    echo -e "\033[1;34m  Si te manda error Contacta al soporte"
    echo -e "\033[1;34m  Soporte: +52 5620117143"
    msg -bar2
-   #read -p " [ s | n ]: " NOTIFY
-   #[[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
+   read -p " [ s | n ]: " NOTIFY
+   [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
    msg -bar
    [[ ${byinst} = "true" ]] && install_fim
