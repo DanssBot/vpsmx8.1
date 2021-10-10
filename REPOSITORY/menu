@@ -927,26 +927,67 @@ echo -e "\033[1;97m   LIMITADOR:\033[1;92m $verificar \033[1;97m DESBLOQUEADOR A
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "  EXPIRADOS: " && echo -ne "\033[1;97m$(cat ${SCPdir}/USRexpired) "  && msg -ne " \033[1;95m BLOQUEADOS: " && echo -e "\033[1;97m$(cat ${SCPdir}/USRbloqueados) \n\033[1;97m         ACTULIZACION DE MONITOR CADA: \033[1;34m $limseg s" 
 [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra " RESELLER:\033[1;96m $(cat ${SCPdir}/message.txt) "
 [[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra " KEY: \033[1;93m$(cat ${SCPdir}/key.txt)"
-# NOVO SISTEMA DE MENUS
-msg -bra " VERSION INSTALADA: \033[1;31m[\033[1;32m $vesaoSCT\033[1;97m"
-msg -bra " CONTACTO: \033[1;31m[\033[1;32m +52 9842147259 \033[1;31m] " 
+# CREDITOS
+creditoss () {
+clear 
 msg -bar
-menu_func "ADMINISTRAR CUENTAS (SSH/SSL/DROPBEAR)" "ADMINISTRAR CUENTAS (SS/SSRR)" "MENU DE INSTALACIONES" "PUERTOS ACTIVOS" "HERRAMIENTAS y EXTRAS" "CAMBIAR COLORES DEL PANEL" " -fi ${monitorservi} MONITOR DE SERVICIOS" "-fi $AutoRun AUTO INICIAR" " -vd ACTUALIZAR SCRIPT" "-vm DESINSTALAR SCRIPT" 
-msg -bar && echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") "&& msg -bra "\033[1;41mSALIR DEL SCRIPT"
+echo -ne " \033[1;93m          CREDITOS Y REGISTRO DE CAMBIOS\n"
+msg -bar
+[[ -e ${SCPdir}/message.txt ]] && msg -bra " RESELLER AUTORIZADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
+[[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
+msg -bra " CONTACTO: \033[1;31m[\033[1;32m +52 9842147259 \033[1;31m] "
+msg -bar
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.6\n"
+echo -ne "- Modificaciones en el codigo test de velocidad\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.5\n"
+echo -ne "- Modificaciones en el codigo\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.4\n"
+echo -ne "- Se grego Websocket\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.3\n"
+echo -ne "- Se grego VNC Viewer\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.2\n"
+echo -ne "- Se grego limpiar cache de sistema\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.1\n"
+echo -ne "- Actualizacion del v2ray\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.0\n"
+echo -ne "- Correccion en lineas del codigo\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.9\n"
+echo -ne "- Correccion en lineas del codigo\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.8\n"
+echo -ne "- Se Agrego panel web v2ray\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.7\n"
+echo -ne "- Se Modifico el menu principal con acceso rapido al v2ray\n"
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.6\n"
+echo -ne "- Se Agrego Trojan Server\n"
+echo -ne " "
+echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.5\n"
+echo -ne "- Cambio del panel\n"
+msg -bar
+}
+# NOVO SISTEMA DE MENUS
+msg -bar
+menu_func "ADMINISTRAR CUENTAS | SSH/SSL/DROPBEAR" "ADMINISTRAR CUENTAS | SS/SSRR" "ADMINISTRAR CUENTAS | V2RAY" "INSTALADOR DE PROTOCOLOS" "PUERTOS ACTIVOS" "HERRAMIENTAS y EXTRAS" "CAMBIAR COLORES DEL PANEL" "MONITOR DE PROCESOS DEL SISTEMA" "MONITOR DE PROTOCOLOS --------> ${monitorservi}" " AUTO INICIAR SCRIPT ----------> $AutoRun " "-vd ACTUALIZAR PANEL" 
+echo -ne "$(msg -verd " [12]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;31m ❌ DESINSTALAR PANEL ❌ "
+msg -bar
+echo -ne "$(msg -verd " [13]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;97m CREDITOS "
+msg -bar && echo -ne "$(msg -verd " [0]") $(msg -verm2 "=>>") "&& msg -bra "\033[1;41m  ❗️ SALIR DEL SCRIPT ❗️ "
 msg -bar
 # FIM
-selection=$(selection_fun 11)
+selection=$(selection_fun 13)
 case ${selection} in
 1)${SCPusr}/usercodes "${idioma}" ;;
 2)${SCPinst}/C-SSR.sh ;;
-3)menu_inst;;
-4)mine_port;;
-5)ferramentas_fun;;
-6)canbio_color;;
-7)monservi_fun;;
-8)fun_autorun;;
-9)atualiza_fun;;
-10)remove_script;;
+3)${SCPinst}/v2ray.sh ;;
+4)menu_inst;;
+5)mine_port;;
+6)ferramentas_fun;;
+7)canbio_color;;
+8)monhtop;;
+9)monservi_fun;;
+10)fun_autorun;;
+11)atualiza_fun;;
+12)remove_script;;
+13)creditoss ;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "$(fun_trans "Enter Para Continuar")" && read enter
