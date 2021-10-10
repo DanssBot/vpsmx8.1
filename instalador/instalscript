@@ -21,7 +21,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
   -verm)cor="${AMARELO}${NEGRITO}[!] ${VERMELHO}" && echo -e "${cor}${2}${SEMCOR}";;
   -azu)cor="${MAG}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
   -verd)cor="${VERDE}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;  -bra)cor="${BRAN}${NEGRITO}" && echo -ne "${cor}${2}${SEMCOR}";;
-  -bar2)cor="\e[0;35m========================================\e[0m" && echo -e "${cor}${SEMCOR}";;
+  -bar2)cor="\e[0;35m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\e[0m" && echo -e "${cor}${SEMCOR}";;
   -bar)cor="\e[1;35m——————————————————————————————————————————————————————" && echo -e "${cor}${SEMCOR}";;
  esac
 }
