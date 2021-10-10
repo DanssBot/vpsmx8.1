@@ -935,7 +935,7 @@ echo -ne " \033[1;93m          CREDITOS Y REGISTRO DE CAMBIOS\n"
 msg -bar
 [[ -e ${SCPdir}/message.txt ]] && msg -bra " RESELLER AUTORIZADO: \n\033[1;96m $(cat ${SCPdir}/message.txt) "
 [[ -e ${SCPdir}/key.txt ]] && msg -bra " KEY DE REGISTRO:\n \033[1;93m $(cat ${SCPdir}/key.txt)"
-msg -bra " CONTACTO: \033[1;31m[\033[1;32m +52 9842147259 \033[1;31m] "
+msg -bra " CONTACTO: \033[1;31m[\033[1;32m +52 5620117143 \033[1;31m] "
 msg -bar
 echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 2.6\n"
 echo -ne "- Modificaciones en el codigo test de velocidad\n"
