@@ -945,7 +945,7 @@ case ${selection} in
 7)monservi_fun;;
 8)fun_autorun;;
 9)atualiza_fun;;
-11)remove_script;;
+10)remove_script;;
 0)cd $HOME && exit 0;;
 esac
 msg -ne "$(fun_trans "Enter Para Continuar")" && read enter
