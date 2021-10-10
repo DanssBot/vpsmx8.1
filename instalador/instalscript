@@ -173,7 +173,7 @@ msg -bar
 funcao_idioma () {
 msg -bar2
 figlet "    ADMIN VPS" | lolcat
-echo -e "     AL COMPRAR EL SCRIPT APOYAS A DESARROLLADOR"
+echo -e "    🇲🇽 HOLA!!! BIENVENIDO A VPS-MX 8.4f 🇲🇽"
 msg -bar2
 pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
