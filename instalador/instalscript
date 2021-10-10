@@ -211,7 +211,7 @@ echo 'echo -e "\033[91m   / _ \ | | | | |\/| || ||  \| |  \ \ / /| |_) \___ \  "
 echo 'echo -e "\033[91m  / ___ \| |_| | |  | || || |\  |   \ V / |  __/ ___) |  " '>> .bashrc
 echo 'echo -e "\033[91m /_/   \_\____/|_|  |_|___|_| \_|    \_/  |_|   |____/  " '>> .bashrc
 echo 'echo "" '>> .bashrc
-echo 'echo -e "\033[92m        Visitanos en www.darinel.com.mx "'>> .bashrc
+echo 'echo -e "\033[92m        🇲🇽 HOLA!!! BIENVENIDO 🇲🇽 "'>> .bashrc
 echo 'mess1="$(less /etc/newadm/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'ver="$(cat /etc/versin_script_new)" '>> .bashrc
