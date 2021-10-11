@@ -26,6 +26,21 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
  esac
 }
 
+fun_ip () {
+MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MIP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
+}
+#IP=$(wget -qO- ipv4.icanhazip.com)
+
+function_verify () {
+
+
+  ### INSTALAR VERCION DE SCRIPT
+  v1=$(curl -sSL "https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/vercion")
+  echo "$v1" > /etc/versin_script
+  }
+
 #------- BARRA DE ESPERA
 
 fun_bar () {
@@ -54,7 +69,7 @@ updater () {
  if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT"
-    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX-Oficial/Install/zzupdate-master/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
+    wget https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/zzupdater/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
 else
 	echo ""
 fi
@@ -79,7 +94,7 @@ mkdir -p "/etc/vpsmxup/" &> /dev/null
 if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT"
-    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX-Oficial/Install/zzupdate-master/zzupdate.default.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
+    wget https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/zzupdater/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
 else
 	echo ""
 fi
