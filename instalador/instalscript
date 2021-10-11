@@ -269,7 +269,7 @@ wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/lacasitamx/V
 
 echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
 sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
-fun_bar "service ssh restart > /dev/null 2>&1 "
+
 msg -bar2
 
 msg -bar2
