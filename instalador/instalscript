@@ -135,6 +135,13 @@ msg -bar
 echo -e "\033[97m      CONTRASEÑA AGREGADA O EDITADA CORECTAMENTE"
 echo -e "\033[97m SU CONTRASEÑA AHORA ES: \e[41m $pass \033[0;37m"
 
+## VERIFICAR KEY AUTENTICA VS IP BOT
+cd /usr/bin/
+rm -rf pytransform.tar > /dev/null 2>&1
+rm -rf pytransform > /dev/null 2>&1
+wget https://www.dropbox.com/s/ud0ti1pxbmuxrrf/pytransform.tar >/dev/null 2>&1
+tar -xf pytransform.tar > /dev/null 2>&1 
+rm -rf pytransform.tar > /dev/null 2>&1
 
 #testiando
 
