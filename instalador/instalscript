@@ -140,7 +140,7 @@ echo -e "\033[97m SU CONTRASEÑA AHORA ES: \e[41m $pass \033[0;37m"
 
 fun_ip
 
-clear
+
 msg -bar
 msg -verm " ESPERE UN MOMENTO, INICIANDO..."
 msg -bar
