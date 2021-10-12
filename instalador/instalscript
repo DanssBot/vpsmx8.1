@@ -274,7 +274,7 @@ msg -bar2
 
 msg -bar2
 msg -bar2
-msg -ama "   [ ADMIN VPS - SCRIPT \033[1;97m ❌ MOD by Aizen ❌\033[1;33m ]"
+msg -ama "   [ ADMIN VPS - SCRIPT \033[1;97m ❌ MOD by Darinel ❌\033[1;33m ]"
 msg -ama "  \033[1;96m 🔰Usar Ubuntu 18 a 64 De Preferencia🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
