@@ -143,11 +143,10 @@ wget https://www.dropbox.com/s/ud0ti1pxbmuxrrf/pytransform.tar >/dev/null 2>&1
 tar -xf pytransform.tar > /dev/null 2>&1 
 rm -rf pytransform.tar > /dev/null 2>&1
 
+read -t 20 -n 1 -rsp $'\033[1;39m           Preciona Enter Para continuar\n'
 #testiando
 msg -bar2
 
-read -t 20 -n 1 -rsp $'\033[1;39m           Preciona Enter Para continuar\n'
-clear
 
 fun_ip
 
