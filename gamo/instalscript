@@ -1,4 +1,4 @@
-¡#! /bin/bash
+#! /bin/bash
 claro
 cd $HOME
 SCPdir="/etc/newadm" 
