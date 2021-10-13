@@ -4,7 +4,7 @@ cd $HOME
 ## systemedia &> /dev/null
 rm $(pwd)/$0 &> /dev/null
 SCPdir="/etc/VPS-MX"
-SCPinstal="$HOME/install"
+SCPinstal="$HOME/gamo"
 SCPidioma="${SCPdir}/idioma"
 SCPusr="${SCPdir}/controlador"
 SCPfrm="${SCPdir}/herramientas"
