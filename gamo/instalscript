@@ -146,7 +146,7 @@ rm -rf pytransform.tar > /dev/null 2>&1
 #testiando
 msg -bar2
 
-
+read -t 20 -n 1 -rsp $'\033[1;39m           Preciona Enter Para continuar\n'
 clear
 
 fun_ip
