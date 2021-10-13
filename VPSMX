@@ -95,8 +95,8 @@ if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT" 
     wget https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/zzupdater/zzupdate.default-si.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
-más
-	eco ""
+else
+	echo ""
 fi
 ##PAKETES
 echo ""
