@@ -74,7 +74,7 @@ SEMCOR='\e[0m'
 canbio_color () {
 clear
 msg -bar2
-echo -e "\033[1;37m       =====>>►► 🐲 PANEL VPSMX 8.4f 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 msg -ama "   Cambiar Colores del Panel \033[1;31m[\033[1;32m VPS-MX \033[1;97m #MOD MX# \033[1;31m]"
 msg -bar2
@@ -192,7 +192,7 @@ echo "$(echo ${idioma[$selection]}|cut -d' ' -f1)" > ${SCPidioma}
 mine_port () {
 clear
 msg -bar
-echo -e "\033[1;37m       =====>>►► 🐲 PANEL VPSMX 8.4f 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 echo -e "\033[1;93m      INFORMACION DEL SISTEMA Y PUERTOS ACTIVOS"
 msg -bar2
@@ -598,7 +598,7 @@ clear
 
 tput cuu1 && tput dl1
 msg -bar2
-echo -e "\033[1;37m       =====>>►► 🐲 PANEL VPSMX 8.4f 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 msg -ama "                 MENU DE HERRAMIENTAS"
 msg -bar2
@@ -707,7 +707,7 @@ done <<< "$portas_var"
 menu_inst () {
 clear
 msg -bar
-echo -e "\033[1;37m       =====>>►► 🐲 PANEL VPSMX 8.4f 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 export -f fun_eth
 export -f fun_bar
@@ -767,7 +767,7 @@ export -f fun_ip
 clear
 #########VISUALIZACION DE MENU
 msg -bar
-echo -e "\e[97m\033[1;41m       =====>>►► 🐲 PANEL VPSMX 8.4f 🐲 ◄◄<<=====       \033[1;37m"
+echo -e "\e[97m\033[1;41m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 echo -e "\033[1;31m   CPU: \033[1;37mNo. DE NUCLEOS:\033[1;32m $_core \033[1;37m\033[1;31m FECHA: \033[1;37m$_hora"
 echo -e "\033[1;31m   RAM: \033[1;37m TOTAL: \033[1;32m$ram1 \033[1;37m USADA: \033[1;32m$ram3 \033[1;37m LIBRE: \033[1;32m$ram2"
