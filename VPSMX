@@ -284,20 +284,20 @@ msg -bar
 }
 funcao_idioma () {
 msg -bar2
-figlet  " ADMIN VPS"  | lolcat
-echo -e  " 🇲🇽 HOLA!!! BIENVENIDO A VPS-MX 8.4f 🇲🇽" 
+figlet "    ADMIN VPS" | lolcat
+echo -e "    🇲🇽 HOLA!!! BIENVENIDO A VPS-MX 8.4f 🇲🇽"
 msg -bar2
-pv="$(echo es)" 
-[[ ${#id} -gt 2 ]] && id="es"  || id="$pv" 
-byinst="verdadero" 
+pv="$(echo es)"
+[[ ${#id} -gt 2 ]] && id="es" || id="$pv"
+byinst="true"
 }
 install_fim () {
-msg -ama  " Finalizando Instalacion"  && msg bar2
-[[  $(find /etc/newadm/ger-user -name nombre.log| grep -w  "nombre.log"| head -1)  ]] || wget -O /etc/newadm/ger-user/nombre.log https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/nombre.log &>/dev/null
-[[  $(buscar /etc/newadm/ger-user -name IDT.log| grep -w  "IDT.log"| head -1)  ]] || wget -O /etc/newadm/ger-user/IDT.log https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/IDT.log &>/dev/null
-[[  $(find /etc/newadm/ger-user -name tiemlim.log| grep -w  "tiemlim.log"| head -1)  ]] || wget -O /etc/newadm/ger-user/tiemlim.log https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
+msg -ama "               Finalizando Instalacion" && msg bar2
+[[ $(find /etc/newadm/ger-user -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/newadm/ger-user/nombre.log https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/nombre.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/newadm/ger-user/IDT.log https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/IDT.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/newadm/ger-user/tiemlim.log https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
 msg -bar
-dormir 4.s
+sleep 4.s
 wget -O /bin/rebootnb https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/REPOSITORY/rebootnb &> /dev/null
 chmod +x /bin/rebootnb
 wget -O /bin/resetsshdrop https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/REPOSITORY/resetsshdrop &> /dev/null
@@ -306,141 +306,149 @@ wget -O /etc/versin_script_new https://raw.githubusercontent.com/DanssBot/vpsmx8
 msg -bar2
 #
 rm -rf instalscript
-echo  '#!/bin/sh -e'  > /etc/rc.local
+echo '#!/bin/sh -e' > /etc/rc.local
 sudo chmod +x /etc/rc.local
-echo  "sudo rebootnb"  >> /etc/rc.local
-echo  "sudo resetsshdrop"  >> /etc/rc.local
-echo  "sleep 2s"  >> /etc/rc.local
-echo  "exit 0"  >> /etc/rc.local
+echo "sudo rebootnb" >> /etc/rc.local
+echo "sudo resetsshdrop" >> /etc/rc.local
+echo "sleep 2s" >> /etc/rc.local
+echo "exit 0" >> /etc/rc.local
 /bin/cp /etc/skel/.bashrc ~/
-echo  'clear'  >> .bashrc
-echo  'DATE=$(date +"%d-%m-%y")'  >> .bashrc
-echo  'TIME=$(date +"%T")'  >> .bashrc
-echo  'echo ""'  >> .bashrc
-echo  'echo -e "\033[91m _ ____ __ __ ____ _ ______ ____ " '>> .bashrc
-echo  'echo -e "\033[91m / \ | _ \| \/ |_ _| \ | | \ \ / / _ \/ ___| " '>> .bashrc
-echo  'echo -e "\033[91m / _ \ | | | | |\/| || || \| | \ \ / /| |_) \___ \ " '>> .bashrc
-echo  'echo -e "\033[91m / ___ \| |_| | | | || || | \ | \ V / | __/ ___) | " '>> .bashrc
-echo  'echo -e "\033[91m /_/ \_\____/|_| |_|___|_| \_| \_/ |_| |____/ " '>> .bashrc
-echo  'echo "" '>> .bashrc
-echo  'echo -e "\033[92m 🇲🇽 HOLA!!! BIENVENIDO 🇲🇽 "'>> .bashrc
-echo  'mess1="$(less /etc/newadm/message.txt)" '  >> .bashrc
-echo  'echo "" '>> .bashrc
-echo  'ver="$(cat /etc/versin_script_new)" '>> .bashrc
-echo  'echo -e "\033[92m RESELLER : $mess 1 "'>> .bashrc
-echo  'echo -e "\033[92m VERSION : $ver "'>> .bashrc
-echo  'echo "" '>> .bashrc 
-echo  'echo -e "\033[97m HOLIS!!! POR FAVOR ESCRIBA: menu o adm "'>> .bashrc
-echo  'echo ""'>> .bashrc
-echo  'echo -e " \e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"'  >> .bashrc
-echo  'echo -e " \e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"'  >> .bashrc
-echo  'echo -e " \e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"'  >> .bashrc
-echo  'echo -e ""'  >> .bashrc
-echo -e  " COMANDO PRINCIPAL PARA ENTRAR AL PANEL " 
-echo -e  "\033[1;41m menu \033[0;37m"  && msg -bar2
+echo 'clear' >> .bashrc
+echo 'DATE=$(date +"%d-%m-%y")' >> .bashrc
+echo 'TIME=$(date +"%T")' >> .bashrc
+echo 'echo ""' >> .bashrc
+echo 'echo -e "\033[91m     _    ____  __  __ ___ _   _  __     ______  ____  " '>> .bashrc
+echo 'echo -e "\033[91m    / \  |  _ \|  \/  |_ _| \ | | \ \   / /  _ \/ ___|  " '>> .bashrc
+echo 'echo -e "\033[91m   / _ \ | | | | |\/| || ||  \| |  \ \ / /| |_) \___ \  " '>> .bashrc
+echo 'echo -e "\033[91m  / ___ \| |_| | |  | || || |\  |   \ V / |  __/ ___) |  " '>> .bashrc
+echo 'echo -e "\033[91m /_/   \_\____/|_|  |_|___|_| \_|    \_/  |_|   |____/  " '>> .bashrc
+echo 'echo "" '>> .bashrc
+echo 'echo -e "\033[92m        🔰 HOLA!!! BIENVENIDO 🔰 "'>> .bashrc
+echo 'mess1="$(less /etc/newadm/message.txt)" ' >> .bashrc
+echo 'echo "" '>> .bashrc
+echo 'ver="$(cat /etc/versin_script_new)" '>> .bashrc
+echo 'echo -e "\033[92m        RESELLER : $mess1 "'>> .bashrc
+echo 'echo -e "\033[92m        VERSION : $ver "'>> .bashrc
+echo 'echo "" '>> .bashrc                                           
+echo 'echo -e "\033[97m   HOLA POR FAVOR ESCRIBA:  menu o adm "'>> .bashrc
+echo 'echo ""'>> .bashrc
+echo 'echo -e "	\e[44;1;37mNombre del Servidor\e[0m : \e[1;33m $HOSTNAME \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mFecha del Servidor\e[0m : \e[1;33m $DATE \e[0m"' >> .bashrc
+echo 'echo -e "	\e[44;1;37mHora del Servidor\e[0m : \e[1;33m $TIME \e[0m"' >> .bashrc
+echo 'echo -e ""' >> .bashrc
+echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+echo -e "\033[1;41m                       menu o adm                    \033[0;37m" && msg -bar2
 }
 verificar_arq () {
 [[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
 [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
 [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
 [[ ! -d ${SCPinst} ]] && mkdir ${SCPinst}
-caso $1 in
- "menú"|  "mensaje.txt") ARQ="${SCPdir}/";; #Menu
- "códigosdeusuario ") ARQ="${SCPusr}/";; #Panel SSRR
- "C-SSR.sh") ARQ="${SCPinst}/";; #Instalacao
- "openssh.sh") ARQ="${SCPinst}/";; #Instalacao
- "squid.sh") ARQ="${SCPinst}/";; #Instalacao
- "dropbear.sh") ARQ="${SCPinst}/";; #Instalacao
- "openvpn.sh") ARQ="${SCPinst}/";; #Instalacao
- "ssl.sh") ARQ="${SCPinst}/";; #Instalacao
- "shadowsocks.sh") ARQ="${SCPinst}/";; #Instalacao
- "Shadowsocks-libev.sh") ARQ="${SCPinst}/";; #Instalacao
- "Shadowsocks-R.sh") ARQ="${SCPinst}/";; #Instalacao
- "v2ray.sh") ARQ="${SCPinst}/";; #Instalacao
- "trojanserver.sh") ARQ="${SCPinst}/";; #Instalacao
- "budp.sh") ARQ="${SCPinst}/";; #Instalacao
- "v2ui.sh") ARQ="${SCPinst}/";; #Instalacao
- | "sockspy.sh"  | "PDirect.py"  | "PPub.py"  | "PPriv.py"  | "POpen.py"  "PGet.py") ARQ="${SCPinst}/";; #Instalacao
+case $1 in
+"menu"|"message.txt")ARQ="${SCPdir}/";; #Menu
+"usercodes")ARQ="${SCPusr}/";; #Panel SSRR
+"C-SSR.sh")ARQ="${SCPinst}/";; #Instalacao
+"openssh.sh")ARQ="${SCPinst}/";; #Instalacao
+"squid.sh")ARQ="${SCPinst}/";; #Instalacao
+"dropbear.sh")ARQ="${SCPinst}/";; #Instalacao
+"openvpn.sh")ARQ="${SCPinst}/";; #Instalacao
+"ssl.sh")ARQ="${SCPinst}/";; #Instalacao
+"shadowsocks.sh")ARQ="${SCPinst}/";; #Instalacao
+"Shadowsocks-libev.sh")ARQ="${SCPinst}/";; #Instalacao
+"Shadowsocks-R.sh")ARQ="${SCPinst}/";; #Instalacao
+"v2ray.sh")ARQ="${SCPinst}/";; #Instalacao
+"trojanserver.sh")ARQ="${SCPinst}/";; #Instalacao
+"budp.sh")ARQ="${SCPinst}/";; #Instalacao
+"v2ui.sh")ARQ="${SCPinst}/";; #Instalacao
+"sockspy.sh"|"PDirect.py"|"PPub.py"|"PPriv.py"|"POpen.py"|"PGet.py")ARQ="${SCPinst}/";; #Instalacao
 *)ARQ="${SCPfrm}/";; #Ferramentas
 esac
 mv -f ${SCPinstal}/$1 ${ARQ}/$1
 chmod +x ${ARQ}/$1
 }
 
-echo -e  " INSTALANDO PAQUETES........ " 
+echo -e "        INSTALANDO PAQUETES........"
 inst_components
 function_verify
 link=https://raw.githubusercontent.com/DanssBot/vpsmx8.1/master/REPOSITORY
-casita=("ADMbot.sh"   "C-SSR.sh"   "Crear-Demo.sh"   "PDirect.py"   PGet.py"   POpen.py"  PPriv.py  "   "PPub.py"   "Shadowsocks-R.sh"   Shadowsocks-libev.sh "   "Unlock-Pass-VULTR.sh"   apacheon.sh"   "blockBT.sh"   budp.sh"   "dns-netflix.sh"   "dropbear.sh"   fai2ban.sh"   gestor.sh" "   "menú"   " mensaje.txt"   openvpn.sh"   "paysnd.sh"   ports.sh"   shadowsocks.sh"   sockspy.sh "speed.sh"   speedtest.py"   squid.sh  "  squidpass.sh  " squidpass.sh  "   "ssl.sh"   tcp.sh"   "panelweb.sh"   "ultrahost"   "usercodes"   "utils.sh"   "v2ray.sh"   "trojanserver.sh v2ui.sh" )
+casita=("ADMbot.sh" "C-SSR.sh" "Crear-Demo.sh" "PDirect.py" "PGet.py" "POpen.py" "PPriv.py" "PPub.py" "Shadowsocks-R.sh" "Shadowsocks-libev.sh" "Unlock-Pass-VULTR.sh" "apacheon.sh" "blockBT.sh" "budp.sh" "dns-netflix.sh" "dropbear.sh" "fai2ban.sh" "gestor.sh" "menu" "message.txt" "openvpn.sh" "paysnd.sh" "ports.sh" "shadowsocks.sh" "sockspy.sh" "speed.sh" "speedtest.py" "squid.sh" "squidpass.sh" "ssl.sh" "tcp.sh" "panelweb.sh" "ultrahost" "usercodes" "utils.sh" "v2ray.sh" "trojanserver.sh v2ui.sh")
 wget -O /usr/bin/trans https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/trans &> /dev/null
 wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/lacasitamx/VPSMX/master/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
 wget -O /bin/monitor.sh https://raw.githubusercontent.com/lacasitamx/rex/master/moni/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/lacasitamx/VPSMX/master/Monitor-Service/estilos.css &> /dev/null
+
+echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
+sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
+
+msg -bar2
+
 msg -bar2
 msg -bar2
-msg -ama  " [ ADMIN VPS - SCRIPT \033[1;97m ❌ MOD por Aizen ❌\033[1;33m ]" 
-msg -ama  " \033[1;96m 🔰Usar Ubuntu 18 a 64 De Preferencia🔰 " 
+msg -ama "   [ ADMIN VPS - SCRIPT \033[1;97m ❌ MOD by Darinel ❌\033[1;33m ]"
+msg -ama "  \033[1;96m 🔰Usar Ubuntu 18 a 64 De Preferencia🔰 "
 msg -bar2
-[[ $1 =  ""  ]] && funcao_idioma || {
-[[ ${#1} -gt 2 ]] && funcao_idioma || id="$1" 
+[[ $1 = "" ]] && funcao_idioma || {
+[[ ${#1} -gt 2 ]] && funcao_idioma || id="$1"
  }
-NOTIFICAR () {
+NOTIFY () {
 msg -bar
-msg -ama  " Notify-BOT (Notificasion Remota)| VPS-MX"  
+msg -ama " Notify-BOT (Notificasion Remota)| VPS-MX  "
 msg -bar
-echo -e  "\033[1;94m Es una opcion para notificar cuando\n un usuario sea bloquedo o este expirado, e info de VPS." 
-echo -e  "\033[1;97m Deve usar el BOT de Telegram @Noti_VPSMX_Bot" 
-echo -e  "\033[1;92m Para sacar su ID solo Meta el comando /MENU en el BOT @USA1_BOT" 
-echo -e  "\033[1;92m Aparesera un pequeño menu donde aparesera su ? ID" 
+echo -e "\033[1;94m Es una opcion para notificar cuando\n un usuario sea bloquedo o este expirado, e info de VPS."
+echo -e "\033[1;97m Deve usar el BOT de Telegram @Noti_VPSMX_Bot"
+echo -e "\033[1;92m Para sacar su ID solo Meta el comando /MENU en el BOT @USA1_BOT"
+echo -e "\033[1;92m Aparesera un pequeño menu donde aparesera su  ? ID"
 msg -bar
-echo -e  "\033[1;97mIgrese un nombre para el VPS:\033[0;37m"; leer -p  " "  nombr
-echo  "${nombr}"  > /etc/newadm/ger-user/nombre.log
-echo -e  "\033[1;97mGrese su ID 👤:\033[0;37m"; leer -p  " "  idbot
-echo  "${idbot}"  > /etc/newadm/ger-user/IDT.log
+echo -e "\033[1;97mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
+echo "${nombr}" > /etc/newadm/ger-user/nombre.log
+echo -e "\033[1;97mIgrese su ID 👤:\033[0;37m"; read -p " " idbot
+echo "${idbot}" > /etc/newadm/ger-user/IDT.log
 msg -bar
-echo -e  "\033[1;32m ID AGREGADO CON EXITO" 
+echo -e "\033[1;32m         ID AGREGADO CON EXITO"
 msg -bar
-NOM="$(less /etc/newadm/ger-user/nombre.log)" 
-NOM1="$(eco $NOM)" 
-IDB1='less /etc/newadm/ger-user/IDT.log'  > /dev/null 2>&1
-IDB2='echo $IDB 1'  > /dev/null 2>&1
-CLAVE="2061678546:AAE705PXyD8sHy8hTV0SRv0jEsIAgtpYhuo" 
-URL="https://api.telegram.org/bot$KEY/sendMessage" 
-MSG="⚠️ AVISO DE VPS: $NOM 1 ⚠️
+NOM="$(less /etc/newadm/ger-user/nombre.log)"
+NOM1="$(echo $NOM)"
+IDB1=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
+IDB2=`echo $IDB1` > /dev/null 2>&1
+
+KEY="2061678546:AAE705PXyD8sHy8hTV0SRv0jEsIAgtpYhuo"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 👉 MENSAJE DE PRUEBA
 🔰 EXITOSO... SALUDOS"
-curl -s --max-time 10 -d  "chat_id=$IDB 2&disable_web_page_preview=1&text=$MSG"  $URL &>/dev/null
-echo -e  "\033[1;34mSE ENVIO MENSAJE DE PRUEBA SI NO LLEGA CONTACTE A @? " 
+curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
+
+echo -e "\033[1;34mSE ENVIO MENSAJE DE PRUEBA SI NO LLEGA CONTACTE A @? "
 }
-# ESTRAYENDO RECURSOS DE LOS ARCHIVOS
+#ESTRAYENDO RECURSOS DE LOS ARCHIVOS
 pontos="*"
 for arqx in ${casita[@]}; do
- stopping="$(fuente trans -b es:${id}  "Descargando Recursos"| sed -e  's/[^a-z -]//ig')" 
- msg -verm  "${stopping}${pontos}" 
+   stopping="$(source trans -b es:${id} "Descargando Recursos"|sed -e 's/[^a-z -]//ig')"
+   msg -verm "${stopping}${pontos}"
    tput cuu1 && tput dl1
    pontos+="*"
- wget -c -P ${SCPinstal} $link/${arqx} &>/dev/null && verificar_arq  "${arqx}" 
-hecho
-dormir 1s
+        wget -c -P ${SCPinstal} $link/${arqx} &>/dev/null && verificar_arq "${arqx}"
+done
+sleep 1s
 msg -bar
-Clave="VpsPremium.com.mx-K?%ab97cda8f?K81mx@+95+94@" 
- cat /etc/bash.bashrc| grep -v  '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT'  > /etc/bash.bashrc.2
-   echo -e  '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT'  >> /etc/bash.bashrc.2
+Key="VpsPremium.com.mx-K?%ab97cda8f?K81mx@+95+94@"
+   cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
+   echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
    mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
-   echo  "${SCPdir}/menu"  > /usr/bin/menu && chmod +x /usr/bin/menu
-   echo  "${SCPdir}/menu"  > /usr/bin/adm && chmod +x /usr/bin/adm
-   echo  "$Key"  > ${SCPdir}/key.txt
+   echo "${SCPdir}/menu" > /usr/bin/menu && chmod +x /usr/bin/menu
+   echo "${SCPdir}/menu" > /usr/bin/adm && chmod +x /usr/bin/adm
+   echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}
-   [[ ${#id} -gt 2 ]] && echo  "es"  > ${SCPidioma} || echo  "${id}"  > ${SCPidioma}
-   echo -e  "${cor[2]} DESEAS INSTALAR NOTI-BOT?( Valor predeterminado n)"    
-   echo -e  "\033[1;34m (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)" 
-   echo -e  "${cor[2]} Gracias por apoyar el proyecto"    
-   echo -e  "\033[1;34m Si te manda error Contacta al soporte" 
-   echo -e  "\033[1;34m Soporte: +52 5620117143" 
+   [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
+   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"   
+   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
+   echo -e "${cor[2]}         Gracias por apoyar el proyecto"   
+   echo -e "\033[1;34m  Si te manda error Contacta al soporte"
+   echo -e "\033[1;34m  Soporte: +52 5620117143"
    msg -bar2
-   leer -p  " [ s | n ]: "  NOTIFICAR
-   [[  "$NOTIFY"  =  "s"  ||  "$NOTIFY"  =  "S"  ]] && NOTIFY
+   read -p " [ s | n ]: " NOTIFY
+   [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
    msg -bar
-   [[ ${byinst} =  "verdadero"  ]] && install_fim
+   [[ ${byinst} = "true" ]] && install_fim
