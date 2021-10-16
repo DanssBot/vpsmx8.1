@@ -31,7 +31,7 @@ USRdatacredi="/etc/BOT-C2/creditos"
 ## INGRESO DE TOKEN BOT
 clear
 msg -bar
-msg -ama "      ## BOT DE GESTION | VPS-GHOST ## \033[1;31m"
+msg -ama "      ## BOT DE GESTION | VPS-ADMIN ## \033[1;31m"
 msg -bar
 if [[ $1 = "id" || -z $(ps aux |grep -v grep |grep -w "ADMbot.sh"|grep dmS|awk '{print $2}') ]]; then
 [[ -z $2 ]] && echo -ne "\033[1;96m >>> Digite el Token del BOT\033[0;92m\nTOKEN: \033[0;97m" && read TOKEN || TOKEN="$2"
@@ -44,7 +44,7 @@ IDIOMA="$(cat ${SCPidioma})" && [[ -z $IDIOMA ]] && IDIOMA="es" #ARGUMENTO 2 (ID
 [[ -z $2 ]] && [[ -z $3 ]] && [[ -z $4 ]] && {
 screen -dmS telebot ${SCPfrm}/ADMbot.sh id "$TOKEN" "$USERLIB" "$PASSLIB"
 msg -bar
-echo -e "\033[1;92m                BOT INICIADO CON ÉXITO"
+echo -e "\033[1;92m               EL BOT A INICIADO CON ÉXITO"
 msg -bar
 exit 0
 }
@@ -306,7 +306,7 @@ demo3="$(less /etc/BOT-A/SSH-DEMO.log)"
 demor="$(echo $demo3)"
 
 local bot_retorno="*$LINE*\n"
-         bot_retorno+="*🔰 MANAGER VPS-GHOST 🔰*\n"
+         bot_retorno+="*🔰 MANAGER VPS-ADMIN 🔰*\n"
          bot_retorno+="$LINE\n"
 		 bot_retorno+="_▪️ SSH REGISTRADAS:_ ( *$SSH4* )\n"	
          bot_retorno+="_▪️ CONECTADOS:_ ( *$ONLINES* )\n"
