@@ -7,10 +7,6 @@ rm -rf instalscript.sh &>/dev/null
 v11=$(cat /etc/versin_script_new) 
 vesaoSCT="\033[1;32m (v$v11)\033[1;97m \033[1;31m]"
 _hora=$(printf '%(%D-%H:%M:%S)T') 
-aviso_bock () {
-echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/vps-mx
-echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/VPS-MX
- rm -rf /etc/instalscript.sh
 #COLORES 
 red=$(tput setaf 1)
 gren=$(tput setaf 2)
