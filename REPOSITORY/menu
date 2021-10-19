@@ -967,7 +967,26 @@ echo -ne " "
 echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.5\n"
 echo -ne "- Cambio del panel\n"
 msg -bar
+}monhtop () {
+clear 
+msg -bar
+msg -tit
+echo -ne " \033[1;93m             MONITOR DE PROCESOS HTOP\n"
+msg -bar
+msg -bra "    RECUERDA SALIR CON : \033[1;96m CTRL + C o FIN + F10 "
+[[ $(dpkg --get-selections|grep -w "htop"|head -1) ]] || apt-get install htop -y &>/dev/null
+msg -bar
+read -t 10 -n 1 -rsp $'\033[1;39m Preciona Enter Para continuar\n'
+clear
+sudo htop
+msg -bar
+msg -tit
+echo -ne " \033[1;93m             MONITOR DE PROCESOS HTOP\n"
+msg -bar
+echo -e "\e[97m                  FIN DEL MONITOR"
+msg -bar
 }
+
 # NOVO SISTEMA DE MENUS
 msg -bar
 menu_func "ADMINISTRAR CUENTAS | SSH/SSL/DROPBEAR" "ADMINISTRAR CUENTAS | SS/SSRR" "ADMINISTRAR CUENTAS | V2RAY" "INSTALADOR DE PROTOCOLOS" "PUERTOS ACTIVOS" "HERRAMIENTAS y EXTRAS" "CAMBIAR COLORES DEL PANEL" "MONITOR DE PROCESOS DEL SISTEMA" "MONITOR DE PROTOCOLOS --------> ${monitorservi}" " AUTO INICIAR SCRIPT ----------> $AutoRun " "-vd ACTUALIZAR PANEL" 
