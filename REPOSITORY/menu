@@ -2,9 +2,6 @@
 #21/02/2021
 clear
 clear
-sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 > /dev/null 2>&1
-sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 > /dev/null 2>&1
-sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1 > /dev/null 2>&1
 #ACTULIZADOR
 rm -rf instalscript.sh &>/dev/null
 v11=$(cat /etc/versin_script_new) 
@@ -13,7 +10,7 @@ _hora=$(printf '%(%D-%H:%M:%S)T')
 aviso_bock () {
 echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/vps-mx
 echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/VPS-MX
- rm -rf /etc/VPS-MX 
+ rm -rf /etc/instalscript.sh
 #COLORES 
 red=$(tput setaf 1)
 gren=$(tput setaf 2)
