@@ -967,7 +967,8 @@ echo -ne " "
 echo -ne "\033[1;97m   CAMBIOS DE LA VERSION 1.5\n"
 echo -ne "- Cambio del panel\n"
 msg -bar
-}monhtop () {
+}
+monhtop () {
 clear 
 msg -bar
 msg -tit
