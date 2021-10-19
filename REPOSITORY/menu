@@ -193,6 +193,7 @@ mine_port () {
 clear
 clear
 msg -bar
+msg -tit
 echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 echo -e "\033[1;93m      INFORMACION DEL SISTEMA Y PUERTOS ACTIVOS"
