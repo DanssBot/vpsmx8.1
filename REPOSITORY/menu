@@ -191,6 +191,7 @@ echo "$(echo ${idioma[$selection]}|cut -d' ' -f1)" > ${SCPidioma}
 }
 mine_port () {
 clear
+clear
 msg -bar
 echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
@@ -482,6 +483,7 @@ echo $system|awk '{print $1, $2}'
 
 
 remove_script () {
+clear
 clear 
 msg -bar
 msg -ama "          ¿ DESEA DESINSTALAR SCRIPT ?"
@@ -502,10 +504,17 @@ rm -rf ${SCPinst} &>/dev/null
 [[ -e /usr/bin/menu ]] && rm /usr/bin/menu
 cd $HOME
 fi
+sudo apt-get --purge remove squid -y > /dev/null 2>&1
+sudo apt-get --purge remove stunnel4 -y > /dev/null 2>&1
+sudo apt-get --purge remove dropbear -y > /dev/null 2>&1
 }
 
 # Menu Ferramentas
 systen_info () {
+clear
+clear
+msg -bar
+msg -tit
 msg -ama "$(fun_trans "DETALLES DEL SISTEMA")"
 null="\033[1;31m"
 msg -bar
@@ -595,7 +604,7 @@ esac
 }
 ferramentas_fun () {
 clear
-
+clear
 tput cuu1 && tput dl1
 msg -bar2
 echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
@@ -706,7 +715,9 @@ done <<< "$portas_var"
 }
 menu_inst () {
 clear
+clear
 msg -bar
+msg -tit
 echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 export -f fun_eth
@@ -779,6 +790,7 @@ msg -bar
 #MONITOR DE SERVICIOS
 monservi_fun () {
 clear
+clear
 monssh () {
 sed -i "57d" /bin/monitor.sh
 sed -i '57i EstadoServicio ssh' /bin/monitor.sh
@@ -800,6 +812,7 @@ sed -i "65d" /bin/monitor.sh
 sed -i '65i EstadoServicio apache2' /bin/monitor.sh
 }
 msg -bar
+msg -tit
 echo -e "\033[1;37m       =====>>►► 🐲 PANEL ADMIN 8.4d 🐲 ◄◄<<=====       \033[1;37m"
 msg -bar
 echo -e "\033[1;32m          MONITOR DE SERVICIONS PRINCIPALES"
