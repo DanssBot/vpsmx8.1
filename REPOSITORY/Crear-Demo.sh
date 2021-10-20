@@ -1,5 +1,8 @@
 #!/bin/bash
 #19/12/2019
+clear
+clear
+msg -bar
 rm -rf /etc/adm
 mkdir /etc/adm
 mkdir /etc/adm/usuarios
