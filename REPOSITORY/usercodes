@@ -491,8 +491,6 @@ diasuser3="$(less /etc/newadm/ger-user/DIAS.log)"
 add_user "${nomeuser}" "${senhauser}" "${diasuser3}" "${limiteuser}" && msg -ama "$(fun_trans "Usuario Creado con Exito")" || msg -verm "$(fun_trans "Error, Usuario no creado")"
 [[ $(dpkg --get-selections|grep -w "openvpn"|head -1) ]] && [[ -e /etc/openvpn/openvpn-status.log ]] && newclient "$nomeuser" "$senhauser"
 msg -bar
-msg -ne "$(fun_trans "COPIA Y PEGA"): " && echo -e "$(meu_ip)":"$SSLPORT"@"nomeuser":"$sehhauser"
-msg -bar
 msg -ne " Enter Para Continuar" && read enter
 ${SCPusr}/usercodes
 }
