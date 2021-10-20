@@ -483,12 +483,15 @@ done
      msg -ne "$(fun_trans "Dias de Duracion"): " && echo -e "$diasuser"
      msg -ne "$(fun_trans "Fecha de Expiracion"): " && echo -e "$(date "+%F" -d " + $diasuser days")"
      msg -ne "$(fun_trans "Limite de Conexion"): " && echo -e "$limiteuser"
+     
 msg -bar
 diasuser2="$(echo "$diasuser"|bc)+1"
 echo "${diasuser2}"|bc > /etc/newadm/ger-user/DIAS.log
 diasuser3="$(less /etc/newadm/ger-user/DIAS.log)"
 add_user "${nomeuser}" "${senhauser}" "${diasuser3}" "${limiteuser}" && msg -ama "$(fun_trans "Usuario Creado con Exito")" || msg -verm "$(fun_trans "Error, Usuario no creado")"
 [[ $(dpkg --get-selections|grep -w "openvpn"|head -1) ]] && [[ -e /etc/openvpn/openvpn-status.log ]] && newclient "$nomeuser" "$senhauser"
+msg -bar
+msg -ne "$(fun_trans "COPIA Y PEGA"): " && echo -e "$(meu_ip)":"$SSLPORT"@"nomeuser":"$sehhauser"
 msg -bar
 msg -ne " Enter Para Continuar" && read enter
 ${SCPusr}/usercodes
@@ -1129,8 +1132,10 @@ desbloqueo_auto
 exit
 fi
 [[ -z ${VERY2} ]] && desbloqueo="\033[1;31m[DESACTIVADO]" || desbloqueo="\033[1;32m[ACTIVO]"
-echo -e "\033[1;37m       =====>>►► •PANEL ADMIN VPS 8.4d• ◄◄<<=====       \033[1;37m"
+clear
+clear
 msg -bar
+msg -tit
 msg -ama "   MENU ADMINISTRACION DE USUARIOS SSL/SSH/DROPBEAR"
 msg -bar
 menu_func "CREAR NUEVO USUARIO" "\033[1;35mCREAR USUARIO TEMPORAL" "\033[1;91mREMOVER USUARIO" "BLOQUEAR O DESBLOQUEAR USUARIO" "\033[1;93mREINICIAR CONTADOR DE BLOQUEADOS y EXPIRADOS" "EDITAR USUARIO" "\033[1;92mRENOVAR USUARIO" "DETALLES DE TODOS USUARIOS" "MONITOR DE USUARIOS CONECTADOS" "ELIMINAR USUARIOS VENCIDOS" "BACKUP USUARIOS" "BANNER SSH" "\033[1;31m⚠️ELIMINAR TODOS LOS USUARIOS⚠️ \n" " -fi ${verificar} \033[1;97m🔒 LIMITADOR-DE-CUENTAS 🔒 -" " -fi ${desbloqueo} \033[1;97m🔓 DESBLOQUEO-AUTOMATICO 🔓 -" "\033[1;92mLOG DE CUENTAS REGISTRADAS" "LIMPIAR LOG DE LIMITADOR"
