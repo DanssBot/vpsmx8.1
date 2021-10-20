@@ -78,5 +78,5 @@ echo -e "\033[1;36m Usuario: \033[0m$name"
 echo -e "\033[1;36m Contraseña: \033[0m$pass"
 echo -e "\033[1;36m Minutos de Duración: \033[0m$tmp"
 msg -bar2
-exit
-fi
+msg -ne " Enter Para Continuar" && read enter
+${SCPusr}/usercodes
