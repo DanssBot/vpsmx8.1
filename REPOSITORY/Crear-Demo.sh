@@ -33,9 +33,11 @@ rm -rf /tmp/$2
 exit" > /tmp/$2
 }
 
-echo -e "\033[1;96m   CREAR USUARIO POR TIEMPOS (Minutos)\n\033[1;97mLos Usuarios que cres en esta extencion se eliminaran\nautomaticamete pasando el tiempo designado\033[0m"
+echo  -e "$(msg -tit)$(msg -bar) " 
+msg -ama "        CREAR USUARIO POR TIEMPO (Minutos)"
 msg -bar
-
+echo -e "\033[1;97m Los Usuarios que cres en esta opcion se eliminaran\n automaticamete pasando el tiempo designado.\033[0m"
+msg -bar
 echo -e "\033[1;91m[1]-\033[1;97mNombre del usuario:\033[0;37m"; read -p " " name
 if [[ -z $name ]]
 then
