@@ -8,7 +8,6 @@ rm -rf instalscript.sh &>/dev/null
 v11=$(cat /etc/versin_script_new) 
 v22=$(cat /etc/versin_script)
 [[ $v11 = $v22 ]] && vesaoSCT="\033[1;37mVersion\033[1;32m $v22  \033[1;31m]" || vesaoSCT="\033[1;31m($v22)\033[1;97m→\033[1;32m($v11)\033[1;31m  ]"
-}
 _hora=$(printf '%(%D-%H:%M:%S)T') 
 #COLORES 
 red=$(tput setaf 1)
