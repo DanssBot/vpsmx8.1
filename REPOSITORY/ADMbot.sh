@@ -1,6 +1,7 @@
 #!/bin/bash
 #20/06/2021
-
+clear
+clear
 # DIRECCIONES DE CARPETAS Y ARCHIVOS 
 
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
@@ -31,6 +32,7 @@ USRdatacredi="/etc/BOT-C2/creditos"
 ## INGRESO DE TOKEN BOT
 clear
 msg -bar
+msg -tit
 msg -ama "      ## BOT DE GESTION | VPS-ADMIN ## \033[1;31m"
 msg -bar
 if [[ $1 = "id" || -z $(ps aux |grep -v grep |grep -w "ADMbot.sh"|grep dmS|awk '{print $2}') ]]; then
