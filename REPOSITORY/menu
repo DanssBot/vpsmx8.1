@@ -2,12 +2,9 @@
 #21/02/2021
 clear
 clear
-#ACTULIZADOR
-rm -rf instalscript.sh &>/dev/null
-[[ ! -e /etc/versin_script ]] && echo 1 > /etc/versin_script
-v11=$(cat /etc/versin_script_new) 
-v22=$(cat /etc/versin_script)
-[[ $v11 = $v22 ]] && vesaoSCT="\033[1;37mVersion\033[1;32m $v22  \033[1;31m]" || vesaoSCT="\033[1;31m($v22)\033[1;97m→\033[1;32m($v11)\033[1;31m  ]"
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 > /dev/null 2>&1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 > /dev/null 2>&1
+sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1 > /dev/null 2>&1
 _hora=$(printf '%(%D-%H:%M:%S)T') 
 #COLORES 
 red=$(tput setaf 1)
@@ -36,7 +33,19 @@ fi
 
 
 # Funcoes Globais
+#ACTULIZADOR
 msg () {
+rm -rf instalscript.sh &>/dev/null
+[[ ! -e /etc/versin_script ]] && echo 1 > /etc/versin_script
+v11=$(cat /etc/versin_script_new) 
+v22=$(cat /etc/versin_script)
+[[ $v11 = $v22 ]] && vesaoSCT="\033[1;37mVersion\033[1;32m $v22  \033[1;31m]" || vesaoSCT="\033[1;31m($v22)\033[1;97m→\033[1;32m($v11)\033[1;31m  ]"
+aviso_bock () {
+echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/vps-mx
+echo 'echo -e "\033[1;91m————————————————————————————————————————————————————\n       ¡SCRIPT BLOQUEADO CONTACTE A @Kalix1! \n————————————————————————————————————————————————————"' > /usr/bin/VPS-MX
+ rm -rf /etc/VPS-MX 
+}
+
 local colors="/etc/new-adm-color"
 if [[ ! -e $colors ]]; then
 COLOR[0]='\033[1;37m' #BRAN='\033[1;37m'
@@ -72,7 +81,7 @@ SEMCOR='\e[0m'
   -verd)cor="${COLOR[2]}${NEGRITO}" && echo -e "${cor}${2}${SEMCOR}";;
   -bra)cor="${COLOR[0]}${SEMCOR}" && echo -e "${cor}${2}${SEMCOR}";;
   "-bar2"|"-bar")cor="${COLOR[1]}————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
-  -tit)echo -e "\e[97m \033[1;41m| 🐲 SCRIPT ADMIN VPS 8.4d | " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
+  -tit)echo -e "\e[97m \033[1;41m| 🐲 SCRIPT ADMIN VPS | \033[1;49m\033[1;49m \033[1;31m[ \033[1;32m $vesaoSCT " && echo -e "${SEMCOR}${cor}${SEMCOR}";;
   -bar3) $([[ ! -e $(echo -e $(echo "2f7573722f73686172652f6d65646961707472652f6c6f63616c2f6c6f672f6c6f676e756c6c"| sed 's/../\\x&/g;s/$/ /')) ]] && $( aviso_bock > /dev/null 2>&1)) && echo -e "${SEMCOR}${cor}${SEMCOR}";;
  esac
 }
@@ -1027,5 +1036,7 @@ case ${selection} in
 13)creditoss ;;
 0)cd $HOME && exit 0;;
 esac
+msg -ne "Enter Para Continuar" && read enter
+${SCPdir}/menu
 msg -ne "$(fun_trans "Enter Para Continuar")" && read enter
 ${SCPdir}/menu
