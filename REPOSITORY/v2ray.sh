@@ -2,7 +2,7 @@
 #25/01/2021 by @Kalix1
 clear
 clear
-SCPdir="/etc/VPS-MX"
+SCPdir="/etc/newadm"
 SCPfrm="${SCPdir}/herramientas" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="${SCPdir}/protocolos"&& [[ ! -d ${SCPinst} ]] && exit
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
