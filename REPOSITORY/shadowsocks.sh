@@ -1,5 +1,7 @@
 #!/bin/bash
-#19/12/2019
+#19/12/2019clear
+clear
+clear
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
@@ -70,6 +72,8 @@ rm /etc/shadowsocks.json
 return 0
 }
        while true; do
+           msg -bar
+	   msg -tit
 	   echo -e "\033[1;32m $(fun_trans ${id} "INSTALADOR SHADOWSOCKS ADM-NEW By @Kalix1")"
 	   msg -bar
        echo -e "\033[1;33m $(fun_trans ${id} "Selecione una Criptografia")"
