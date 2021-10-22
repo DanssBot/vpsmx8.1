@@ -1,5 +1,8 @@
 #!/bin/bash
 #19/12/2019
+clear
+clear
+
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
@@ -9,6 +12,8 @@ MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MEU_IP" != "$MEU_IP2" ]] && echo "$MEU_IP2" || echo "$MEU_IP"
 }
 IP="$(fun_ip)"
+msg -bar
+msg -tit
 echo -e "\033[1;96mGestor de Archivos FTP VPS•MX"
 msg -bar
 echo -e "${cor[4]} [1] >${cor[3]} $(fun_trans "Colocar Archivo Online")"
