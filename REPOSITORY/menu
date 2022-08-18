@@ -499,7 +499,7 @@ clear
 clear
 msg -bar
 msg -tit
-msg -ama "          ¿ DESEA DESINSTALAR SCRIPT ?"
+msg -ama "          ¿ QUIERES MANDAR A LA VERGA EL SCRIPT ?"
 msg -bar
 echo -e " Esto borrara todos los archivos del script ADMIN VPS"
 msg -bar
